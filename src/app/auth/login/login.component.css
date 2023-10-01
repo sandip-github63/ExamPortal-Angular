@@ -1,0 +1,43 @@
+.circular-logo {
+    width: 50%;
+    height: 50%;
+    margin-left: 15%;
+    margin-bottom: 5%;  
+   
+    /* Add any additional styling as needed */
+  }
+
+  .mat-card-actions {
+    display: flex;
+   
+  }
+
+  .small-button {
+    font-size: 12px; /* Adjust the font size to make the button small */
+    padding: -10px; /* You can adjust the padding to control the button size */
+  }
+
+  /* signup-form.component.css */
+.signup-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 20px;
+  padding-left: 10px;
+
+  
+}
+
+.signup-card {
+  width: 400px;
+  padding: 20px;
+  margin-bottom: auto;
+  
+}
+
+.full-width {
+  width: 100%;
+}
+
+

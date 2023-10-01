@@ -1,0 +1,36 @@
+<!-- signup-form.component.html -->
+<form class="signup-form" (ngSubmit)="formSubmit()" [formGroup]="signupForm" >
+    <mat-card class="signup-card">
+      <mat-card-header>
+        <mat-card-title><img src="../../../assets/mylogin.png" class="circular-logo" alt=""></mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <mat-form-field class="full-width">
+          <mat-label>User Name</mat-label>
+          <input matInput type="text" name="userName" formControlName="userName" [(ngModel)]="user.userName" required>
+          <mat-error *ngIf="signupForm.controls['userName'].invalid && signupForm.controls['userName'].touched">
+            User Name is required.
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" name="password" formControlName="password" [(ngModel)]="user.password" required>
+          <mat-error *ngIf="signupForm.controls['password'].invalid && signupForm.controls['password'].touched">
+            password must be set.
+          </mat-error>
+          
+        </mat-form-field>
+  
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" class="small-button">login</button>
+        <button mat-raised-button color="warn"  (click)="signupPage()" type="submit" class="small-button">singup</button>
+  
+      </mat-card-actions>
+     
+    </mat-card>
+  </form>
+  

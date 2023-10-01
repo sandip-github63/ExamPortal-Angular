@@ -1,0 +1,40 @@
+
+/* navbar.component.css */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .myNavBar{
+    background-color: #32a8a2;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Add some space between the buttons */
+  }
+  
+  /* Optional: Add padding and center the content */
+  .mat-toolbar {
+    padding: 0 16px;
+    justify-content: space-between; /* Center content horizontally */
+  }
+  
+  /* Move the "Login" and "Register" buttons to the right */
+  .navbar-right {
+    margin-left: auto;
+  }
+
+
+  button.active {
+    color: #fff; /* Text color when active */
+    background-color: #a83232; /* Background color when active */
+    border-radius: 4px; /* Optional: Add some border-radius for a nicer look */
+  }
+  

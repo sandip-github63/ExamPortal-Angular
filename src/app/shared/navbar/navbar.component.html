@@ -1,0 +1,19 @@
+<mat-toolbar class="myNavBar">
+    <div class="navbar-container">
+      <div class="navbar-left">
+        <!-- Home Button -->
+         
+        <button mat-button [ngClass]="{ 'active': activeButton === 'home' }" (click)="setActive('home')" [routerLink]="'/'"><mat-icon>home</mat-icon>Home        
+        </button>
+      </div>
+
+      <div class="navbar-right">
+        <!-- Login and Register Buttons -->
+        
+        <button mat-button [ngClass]="{ 'active': activeButton === 'login' }" (click)="setActive('login')" [routerLink]="'/login'"><mat-icon>login</mat-icon>Login</button>
+        
+        <button mat-button [ngClass]="{ 'active': activeButton === 'register' }" (click)="setActive('register')" [routerLink]="'/signup'"><mat-icon>how_to_reg</mat-icon>Register</button>
+      </div>
+    </div>
+</mat-toolbar>
+  
