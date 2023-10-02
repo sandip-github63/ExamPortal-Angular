@@ -48,6 +48,10 @@ export class SignupComponent implements OnInit {
 
     // Check if the form is valid before submitting
 
+    
+    if(this.user.userName.trim()== '' || this.user.userName.trim()==null || this.user.password.trim()== '' || this.user.password.trim()==null){
+
+
     Swal.fire({
       icon: 'error',
       title: 'Form Validation Error',
@@ -64,6 +68,8 @@ export class SignupComponent implements OnInit {
       }
     });
     return;
+
+  }
    
     // Continue with form submission logic
     
