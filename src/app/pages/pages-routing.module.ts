@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { AdminGuard } from '../services/admin.guard';
+import { UserGuard } from '../services/user.guard';
 
 const routes: Routes = [
 
@@ -12,11 +14,15 @@ const routes: Routes = [
   },
   {
     path:'admin-dashboard',
-    component:DashboardComponent
+    component:DashboardComponent,
+    pathMatch:"full",
+    canActivate:[AdminGuard] //activate admin guard to this route 
   },
   {
     path:'user-dashboard',
-    component:UserDashboardComponent
+    component:UserDashboardComponent,
+    pathMatch:"full",
+    canActivate:[UserGuard] //activate user guard to this route
   }
 
 ];

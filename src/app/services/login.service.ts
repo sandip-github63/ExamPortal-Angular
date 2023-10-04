@@ -35,20 +35,27 @@ export class LoginService {
   public isLoginedIn(){
 
       let token=localStorage.getItem("token");
+      
+      console.log("token ..........."+JSON.stringify(token));
 
-      if(token==undefined || token== '' || token==null){
+      console.log("token "+token);
+
+      if(token==null){
           return false;
       }else{
         return true;
       }
-    }
+  }
 
+
+    
 
   //logout : remove token from local storage
   
   public logOut(){
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+
 
     return true;
 
@@ -78,7 +85,7 @@ export class LoginService {
       return JSON.parse(user);
 
     }else{
-       this.logOut();
+      
        return null;
     }
 

@@ -43,6 +43,9 @@ export class LoginComponent implements OnInit {
 
   formSubmit(){
 
+    console.log("login is calling.....");
+
+
     // Check if the form is valid before submitting
 
     
@@ -73,11 +76,14 @@ export class LoginComponent implements OnInit {
     this.loginService.generateToken(this.user).subscribe(
       (data:any)=>{       
 
+            console.log("token is generated successfully...."+data);
            // Convert the object to a JSON string and log it
               const jsonData:any = JSON.stringify(data);
 
               // Parse the JSON string into an object
                const parsedData = JSON.parse(jsonData);
+
+               console.log("parsedData having..."+parsedData);
 
 
                console.log(parsedData.token);
@@ -86,6 +92,9 @@ export class LoginComponent implements OnInit {
               console.log("token after generate :"+parsedData.token);
 
               this.loginService.setTokenLocalStorage(parsedData.token);
+
+              console.log("check token is...."+this.loginService.getToken());
+
 
               this.loginService.getCurrentLoginUser().subscribe(
                     (user:any)=>{
@@ -107,6 +116,7 @@ export class LoginComponent implements OnInit {
 
 
                       }else{
+                          console.log("i am removing token.....");
                           this.loginService.logOut();
 
 

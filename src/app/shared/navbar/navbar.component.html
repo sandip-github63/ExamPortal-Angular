@@ -9,10 +9,19 @@
 
       <div class="navbar-right">
         <!-- Login and Register Buttons -->
+
+        <button mat-button (click)="logout()" *ngIf="login.isLoginedIn()" [ngClass]="{ 'active': activeButton === 'login' }" (click)="setActive('login')" [routerLink]="'/logout'"><mat-icon>logout</mat-icon>Logout</button>
+
+         <button mat-button *ngIf="login.isLoginedIn()" [ngClass]="{ 'active': activeButton === 'userName' }" (click)="setActive('userName')">
+          <mat-icon>account_circle</mat-icon> 
+          <span class="user-name">{{ login.getUser().userWithAuthorities.user.userName | uppercase }}</span>
+        </button>  
         
-        <button mat-button [ngClass]="{ 'active': activeButton === 'login' }" (click)="setActive('login')" [routerLink]="'/login'"><mat-icon>login</mat-icon>Login</button>
+        <button mat-button *ngIf="!login.isLoginedIn()" [ngClass]="{ 'active': activeButton === 'login' }" (click)="setActive('login')" [routerLink]="'/login'"><mat-icon>login</mat-icon>Login</button>
         
-        <button mat-button [ngClass]="{ 'active': activeButton === 'register' }" (click)="setActive('register')" [routerLink]="'/signup'"><mat-icon>how_to_reg</mat-icon>Register</button>
+        <button mat-button *ngIf="!login.isLoginedIn()" [ngClass]="{ 'active': activeButton === 'register' }" (click)="setActive('register')" [routerLink]="'/signup'"><mat-icon>how_to_reg</mat-icon>Register</button>
+
+        
       </div>
     </div>
 </mat-toolbar>
