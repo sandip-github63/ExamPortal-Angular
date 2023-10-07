@@ -12,6 +12,7 @@ import { PagesModule } from './pages/pages.module';
 import { TokenInterceptor } from './services/token.interceptor';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { TokenInterceptor } from './services/token.interceptor';
     AuthModule,
     HttpClientModule,
     SharedModule,
-    PagesModule
+    PagesModule,
+    
    
   ],
   providers: [

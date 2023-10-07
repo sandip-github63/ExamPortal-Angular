@@ -115,6 +115,32 @@ export class LoginService {
     console.error("User or authorities not found.");
     return null;
   }
+
+  
+}
+
+public  getUserRoleByUser(user:any) {  
+
+  // Check if the user object exists and has authorities
+  if (user && user.userWithAuthorities && user.userWithAuthorities.authorities) {
+    // Access the authorities array
+    let authorities = user.userWithAuthorities.authorities;
+
+    // Now you can use the authorities array as needed
+    // For example, you can log it to the console
+    console.log("Authorities:", authorities);
+
+    return authorities;
+
+    // You can also access individual authorities by index, e.g., authorities[0]
+    // or loop through them if there are multiple authorities.
+  } else {
+    // Handle the case where the user object or authorities are missing
+    console.error("User or authorities not found.");
+    return null;
+  }
+
+  
 }
 
 
