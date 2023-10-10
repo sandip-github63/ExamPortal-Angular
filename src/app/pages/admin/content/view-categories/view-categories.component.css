@@ -1,0 +1,27 @@
+.example-card {
+    max-width: 400px;
+  }
+
+  /* Custom CSS styles */
+.example-card {
+  border: 2px solid #3498db; /* Border color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Box shadow for a card-like appearance */
+  margin: 10px; /* Spacing between cards */
+  background-color: #fff; /* Card background color */
+}
+
+.example-card:hover {
+  transform: scale(1.02); /* Scale up the card on hover */
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.like-button {
+  color: #e74c3c; /* Like button color */
+}
+
+.share-button {
+  color: #3498db; /* Share button color */
+}
+
+

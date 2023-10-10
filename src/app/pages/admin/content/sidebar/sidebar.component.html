@@ -9,15 +9,15 @@
             <mat-icon >account_circle</mat-icon>  Profile
         </button> 
         
-        <button mat-button [ngClass]="{ 'active': activeButton === 'categories' }" (click)="setActive('categories')" mat-list-item routerLink="/admin-dashboard/profile">
+        <button mat-button [ngClass]="{ 'active': activeButton === 'categories' }" (click)="setActive('categories')" mat-list-item routerLink="/admin-dashboard/categories">
             <mat-icon >add_shopping_cart</mat-icon>  Categories
         </button> 
         
-        <button mat-button [ngClass]="{ 'active': activeButton === 'add-categories' }" (click)="setActive('add-categories')" mat-list-item routerLink="/admin-dashboard/profile">
+        <button mat-button [ngClass]="{ 'active': activeButton === 'add-categories' }" (click)="setActive('add-categories')" mat-list-item routerLink="/admin-dashboard/add-category">
             <mat-icon >add_circle_outline</mat-icon>  Add Categories
         </button> 
 
-        <button mat-button [ngClass]="{ 'active': activeButton === 'quizzes' }" (click)="setActive('quizzes')" mat-list-item routerLink="/admin-dashboard/profile">
+        <button mat-button [ngClass]="{ 'active': activeButton === 'quizzes' }" (click)="setActive('quizzes')" mat-list-item routerLink="/admin-dashboard/view-quizzes">
             <mat-icon >quiz</mat-icon>  Quizzes
         </button>  
 

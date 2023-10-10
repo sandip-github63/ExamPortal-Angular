@@ -15,8 +15,14 @@ import { WelcomeComponent } from './admin/content/welcome/welcome.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
-
+import { ViewCategoriesComponent } from './admin/content/view-categories/view-categories.component';
+import { AddCategoryComponent } from './admin/content/add-category/add-category.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { FormsModule } from '@angular/forms'; 
+import { BrowserModule } from '@angular/platform-browser';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ViewQuizzesComponent } from './admin/content/view-quizzes/view-quizzes.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 
@@ -29,6 +35,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
    
     MainContentComponent,
         WelcomeComponent,
+        ViewCategoriesComponent,
+        AddCategoryComponent,
+        ViewQuizzesComponent,
     
    
   ],
@@ -41,8 +50,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule,
     MatInputModule,
     MatPaginatorModule,
+    MatProgressBarModule,
+    FormsModule,
+    BrowserModule,
+    MatSnackBarModule,
+    MatBadgeModule, 
+
     
-   
     
   ]
 })

@@ -7,6 +7,9 @@ import { AdminGuard } from '../services/admin.guard';
 import { UserGuard } from '../services/user.guard';
 import { MainContentComponent } from './admin/content/main-content/main-content.component';
 import { WelcomeComponent } from './admin/content/welcome/welcome.component';
+import { ViewCategoriesComponent } from './admin/content/view-categories/view-categories.component';
+import { AddCategoryComponent } from './admin/content/add-category/add-category.component';
+import { ViewQuizzesComponent } from './admin/content/view-quizzes/view-quizzes.component';
 
 
 const routes: Routes = [
@@ -29,6 +32,19 @@ const routes: Routes = [
         {
           path:"profile",
           component:MainContentComponent
+        },
+        {
+          path:"categories",
+          component:ViewCategoriesComponent
+        },
+        
+        {
+          path:"add-category",
+          component:AddCategoryComponent
+        },
+        {
+          path:"view-quizzes",
+          component:ViewQuizzesComponent
         }
     ]
     
