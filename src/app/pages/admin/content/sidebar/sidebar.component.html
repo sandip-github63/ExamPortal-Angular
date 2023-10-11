@@ -21,11 +21,11 @@
             <mat-icon >quiz</mat-icon>  Quizzes
         </button>  
 
-        <button mat-button [ngClass]="{ 'active': activeButton === 'add-quiz' }" (click)="setActive('add-quiz')" mat-list-item routerLink="/admin-dashboard/profile">
+        <button mat-button [ngClass]="{ 'active': activeButton === 'add-quiz' }" (click)="setActive('add-quiz')" mat-list-item routerLink="/admin-dashboard/add-quiz">
             <mat-icon >add</mat-icon>  Add Quiz
         </button>  
 
-        <button mat-button [ngClass]="{ 'active': activeButton === 'logout' }" (click)="setActive('logout')" mat-list-item routerLink="/admin-dashboard/profile">
+        <button mat-button [ngClass]="{ 'active': activeButton === 'logout' }" (click)="setActive('logout'); logout();" mat-list-item routerLink="/admin-dashboard/logout">
             <mat-icon >logout</mat-icon>  Logout
         </button>  
 

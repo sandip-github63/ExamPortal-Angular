@@ -23,6 +23,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ViewQuizzesComponent } from './admin/content/view-quizzes/view-quizzes.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { AddQuizComponent } from './admin/content/add-quiz/add-quiz.component';
+
+import { MatCheckboxModule } from '@angular/material/checkbox'; // Import MatCheckboxModule
+import { MatSelectModule } from '@angular/material/select'; // Import MatSelectModule
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms'; // Import the ReactiveFormsModule
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { UpdateQuizComponent } from './admin/content/update-quiz/update-quiz.component';
+
+
+
 
 
 
@@ -38,6 +49,8 @@ import {MatBadgeModule} from '@angular/material/badge';
         ViewCategoriesComponent,
         AddCategoryComponent,
         ViewQuizzesComponent,
+        AddQuizComponent,
+        UpdateQuizComponent,
     
    
   ],
@@ -55,8 +68,12 @@ import {MatBadgeModule} from '@angular/material/badge';
     BrowserModule,
     MatSnackBarModule,
     MatBadgeModule, 
-
-    
+    MatCheckboxModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    ReactiveFormsModule  ,
+    MatSlideToggleModule,
+      
     
   ]
 })

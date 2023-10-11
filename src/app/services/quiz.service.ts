@@ -13,4 +13,30 @@ export class QuizService {
     return this.http.get(`${endPoint}/quiz/`); 
   }
 
+  public addQuiz(quiz:any){
+
+    return this.http.post(`${endPoint}/quiz/`,quiz); 
+
+  }
+
+  deleteQuizById(qId:any){
+
+    return this.http.delete(`${endPoint}/quiz/${qId}`); 
+   
+  }
+
+  //get Quiz by quizId
+
+  public getQuizByQuizId(quizId:any){
+
+    return this.http.get(`${endPoint}/quiz/${quizId}`); 
+
+  }
+
+  public updateQuiz(quiz:any){
+
+    return this.http.put(`${endPoint}/quiz/`,quiz); 
+
+  }
+
 }
