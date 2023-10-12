@@ -19,7 +19,7 @@
    
        
       <mat-card-actions>
-        <button class="btn btn-primary" >All Questions</button>
+        <button class="btn btn-primary" [routerLink]="'/admin-dashboard/view-questions/'+q.quizId + '/' +q.title" >All Questions</button>
         <button class="btn btn-secondary">Max Marks {{q.maxMarks}}</button>
         <button class="btn btn-secondary" >View Question only {{q.numberOfQuestions}}</button>
         <button class="btn btn-danger" [routerLink]="'/admin-dashboard/quiz-update/'+q.quizId">Update </button>

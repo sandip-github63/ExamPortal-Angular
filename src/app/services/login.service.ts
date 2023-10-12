@@ -21,9 +21,7 @@ export class LoginService {
 
   //Once token generate then store token in Local Storage in web browser
 
-  public  setTokenLocalStorage(token:any){
-
-    console.log("token is here dear "+token);
+  public  setTokenLocalStorage(token:any){   
 
     localStorage.setItem('token',token);
     return true;
@@ -34,11 +32,7 @@ export class LoginService {
 
   public isLoginedIn(){
 
-      let token=localStorage.getItem("token");
-      
-      console.log("token ..........."+JSON.stringify(token));
-
-      console.log("token "+token);
+      let token=localStorage.getItem("token");    
 
       if(token==null){
           return false;
@@ -104,7 +98,6 @@ export class LoginService {
 
     // Now you can use the authorities array as needed
     // For example, you can log it to the console
-    console.log("Authorities:", authorities);
 
     return authorities;
 
@@ -123,12 +116,8 @@ public  getUserRoleByUser(user:any) {
 
   // Check if the user object exists and has authorities
   if (user && user.userWithAuthorities && user.userWithAuthorities.authorities) {
-    // Access the authorities array
-    let authorities = user.userWithAuthorities.authorities;
-
-    // Now you can use the authorities array as needed
-    // For example, you can log it to the console
-    console.log("Authorities:", authorities);
+   
+    let authorities = user.userWithAuthorities.authorities;   
 
     return authorities;
 
@@ -148,8 +137,6 @@ public  getUserRoleByUser(user:any) {
   //get current login user detail
   
   public getCurrentLoginUser(){
-
-      console.log("localhost:8080/user/currentLoginUser");
 
       return this.http.get(`${endPoint}/user/currentLoginUser`);
 

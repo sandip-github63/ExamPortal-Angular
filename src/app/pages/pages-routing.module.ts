@@ -13,6 +13,8 @@ import { ViewQuizzesComponent } from './admin/content/view-quizzes/view-quizzes.
 import { AddQuizComponent } from './admin/content/add-quiz/add-quiz.component';
 import { LoginComponent } from '../auth/login/login.component';
 import { UpdateQuizComponent } from './admin/content/update-quiz/update-quiz.component';
+import { ViewQuizQuestionsComponent } from './admin/content/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './admin/content/add-question/add-question.component';
 
 
 const routes: Routes = [
@@ -58,6 +60,15 @@ const routes: Routes = [
           component:UpdateQuizComponent
 
         },
+
+        {
+          path:"view-questions/:quizId/:title",
+          component:ViewQuizQuestionsComponent
+        },
+        {
+          path:"add-question/:quizId/:title",
+          component:AddQuestionComponent
+        }
     ]
     
   },

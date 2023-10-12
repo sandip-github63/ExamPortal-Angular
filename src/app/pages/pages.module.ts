@@ -31,8 +31,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms'; // Import the ReactiveFormsModule
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { UpdateQuizComponent } from './admin/content/update-quiz/update-quiz.component';
-
-
+import { ViewQuizQuestionsComponent } from './admin/content/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './admin/content/add-question/add-question.component';
 
 
 
@@ -51,6 +51,8 @@ import { UpdateQuizComponent } from './admin/content/update-quiz/update-quiz.com
         ViewQuizzesComponent,
         AddQuizComponent,
         UpdateQuizComponent,
+        ViewQuizQuestionsComponent,
+        AddQuestionComponent,
     
    
   ],
@@ -73,6 +75,7 @@ import { UpdateQuizComponent } from './admin/content/update-quiz/update-quiz.com
     MatFormFieldModule,
     ReactiveFormsModule  ,
     MatSlideToggleModule,
+   
       
     
   ]
