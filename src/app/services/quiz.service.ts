@@ -39,4 +39,10 @@ export class QuizService {
 
   }
 
+  public getQuizzesOfCategory(cId:any){
+
+    return this.http.get(`${endPoint}/quiz/category/${cId}`);  
+     
+  }
+
 }

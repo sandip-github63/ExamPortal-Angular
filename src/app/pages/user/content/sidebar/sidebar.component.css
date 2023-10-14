@@ -1,0 +1,7 @@
+button.active {
+    color: #fff; /* Text color when active */
+    background-color: #a83232; /* Background color when active */
+    border-radius: 4px; /* Optional: Add some border-radius for a nicer look */
+  }
+
+  

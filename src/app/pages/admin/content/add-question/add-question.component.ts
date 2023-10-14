@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
 
+
+
 @Component({
   selector: 'app-add-question',
   templateUrl: './add-question.component.html',
@@ -12,6 +14,9 @@ export class AddQuestionComponent implements OnInit {
 
   quizId:any;
   title:any;
+
+
+
 
   question:any={
          

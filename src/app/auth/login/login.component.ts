@@ -109,10 +109,10 @@ export class LoginComponent implements OnInit {
                         //redirect  admin dashboard
                         window.location.href='/admin-dashboard'
 
-                      }else if (this.loginService.getUserRole()=="ROLE_NORMAL"){
+                      }else if (this.loginService.getUserRole()=="ROLE_USER"){
 
                          //redirect normal dashboard
-                         window.location.href='/user-dashboard'
+                         window.location.href='/user-dashboard/0'
 
 
                       }else{

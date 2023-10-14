@@ -18,7 +18,7 @@ export class UserGuard implements CanActivate {
 
      //if user is login and user role is ROLE_NORMAL
 
-     if(this.login.isLoginedIn() && this.login.getUserRole()=="ROLE_NORMAL"){
+     if(this.login.isLoginedIn() && this.login.getUserRole()=="ROLE_USER"){
 
       return true;
 
