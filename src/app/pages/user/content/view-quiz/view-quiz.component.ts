@@ -26,7 +26,9 @@ export class ViewQuizComponent implements OnInit {
         //load all Quiz 
         console.log("load all quiz");
 
-        this._quiz.Quizzes().subscribe(
+        //view only active quize
+
+        this._quiz.getActiveQuizzes().subscribe(
 
           (data:any)=>{
 
@@ -48,7 +50,7 @@ export class ViewQuizComponent implements OnInit {
     }else{
         console.log("load particular quiz");
 
-        this._quiz.getQuizzesOfCategory(this.cId).subscribe(
+        this._quiz.getActiveQuizzesOfCategory(this.cId).subscribe(
 
           (data:any)=>{
 

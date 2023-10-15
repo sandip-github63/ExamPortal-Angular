@@ -45,4 +45,20 @@ export class QuizService {
      
   }
 
+
+  public getActiveQuizzes(){
+
+    return this.http.get(`${endPoint}/quiz/active`);  
+
+
+  }
+
+  public getActiveQuizzesOfCategory(cId:any){
+
+    return this.http.get(`${endPoint}/quiz/category/active/${cId}`);  
+
+  }
+
+
+
 }

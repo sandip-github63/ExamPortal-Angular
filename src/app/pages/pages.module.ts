@@ -35,6 +35,10 @@ import { ViewQuizQuestionsComponent } from './admin/content/view-quiz-questions/
 import { AddQuestionComponent } from './admin/content/add-question/add-question.component';
 import { SidebarComponent as sidebarusercomponent } from './user/content/sidebar/sidebar.component';
 import { ViewQuizComponent } from './user/content/view-quiz/view-quiz.component';
+import { QuizDetailsComponent } from './user/content/quiz-details/quiz-details.component';
+import { StartQuizComponent } from './user/content/start-quiz/start-quiz.component';
+
+import { MatRadioModule } from '@angular/material/radio';
 
 
 
@@ -56,7 +60,9 @@ import { ViewQuizComponent } from './user/content/view-quiz/view-quiz.component'
         ViewQuizQuestionsComponent,
         AddQuestionComponent,
         sidebarusercomponent,
-        ViewQuizComponent     
+        ViewQuizComponent,
+        QuizDetailsComponent,
+        StartQuizComponent     
         
     
    
@@ -80,9 +86,7 @@ import { ViewQuizComponent } from './user/content/view-quiz/view-quiz.component'
     MatFormFieldModule,
     ReactiveFormsModule  ,
     MatSlideToggleModule,
-    
-
-    
+    MatRadioModule,   
    
       
     

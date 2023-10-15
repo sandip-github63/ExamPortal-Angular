@@ -26,7 +26,7 @@
                     <mat-card-actions>
                         <!-- Your card actions go here -->
                         <button  class="btn btn-primary btn-only">View</button>
-                        <button  class="btn btn-danger btn-only">Start</button>
+                        <button  class="btn btn-danger btn-only" [routerLink]="'/user-dashboard/quiz-details/'+q.quizId">Start</button>
                         <button  class="btn btn-secondary" disabled>Questions :{{q.numberOfQuestions}}</button>
                         <button  class="btn btn-secondary" disabled>FM. :{{q.maxMarks}}</button>                
                    </mat-card-actions>

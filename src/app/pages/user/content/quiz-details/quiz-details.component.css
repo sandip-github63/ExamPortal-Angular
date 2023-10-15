@@ -1,0 +1,101 @@
+/* styles.css */
+.bootstrap-wrapper {
+    background-color: #f5f5f5;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .mat-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-card-title {
+    font-size: 24px;
+    color: #007bff; /* Blue text color */
+  }
+  
+  .mat-card-subtitle {
+    font-size: 18px;
+    color: #666; /* Gray text color */
+  }
+  
+  h1 {
+    font-size: 20px;
+    color: #333; /* Dark gray text color */
+  }
+  
+  mat-divider {
+    border-top: 2px solid #007bff; /* Blue divider color */
+    margin: 20px 0;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  li {
+    font-size: 16px;
+    color: #333; /* Dark gray text color */
+  }
+  
+  button {
+    background-color: #007bff; /* Blue button color */
+    color: #fff; /* White text color */
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Slightly darker blue on hover */
+  }
+  
+  
+  /* Add this to your styles.css file */
+
+/* Styling for "Important Instruction" section */
+h1 {
+    font-size: 24px;
+    color: #007bff; /* Blue text color */
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  ul li {
+    font-size: 16px;
+    color: #333; /* Dark gray text color */
+    margin-bottom: 10px;
+  }
+  
+  ul li:before {
+    content: "•";
+    color: #007bff; /* Blue bullet color */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  
+  /* Make text within <b> elements light green */
+  ul li b {
+    color: #ff6666cb; /* Light green text color for bold elements */
+    font-weight: bold;
+  }
+  

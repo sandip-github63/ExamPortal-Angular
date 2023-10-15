@@ -16,6 +16,8 @@ import { UpdateQuizComponent } from './admin/content/update-quiz/update-quiz.com
 import { ViewQuizQuestionsComponent } from './admin/content/view-quiz-questions/view-quiz-questions.component';
 import { AddQuestionComponent } from './admin/content/add-question/add-question.component';
 import { ViewQuizComponent } from './user/content/view-quiz/view-quiz.component';
+import { QuizDetailsComponent } from './user/content/quiz-details/quiz-details.component';
+import { StartQuizComponent } from './user/content/start-quiz/start-quiz.component';
 
 
 const routes: Routes = [
@@ -82,11 +84,23 @@ const routes: Routes = [
          path:":cId",
          component:ViewQuizComponent
 
-      }
+      },
+
+      {
+        path:"quiz-details/:quizId",
+        component:QuizDetailsComponent
+
+      },    
 
 
     ]
     
+  },
+
+  {
+    path:"start-quiz/:quizId",
+    component:StartQuizComponent,
+    canActivate:[UserGuard]
   }
 
 ];
