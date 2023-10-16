@@ -12,7 +12,7 @@ import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
 import { TokenInterceptor } from './services/token.interceptor';
 
-
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
 
 
 @NgModule({
@@ -28,6 +28,8 @@ import { TokenInterceptor } from './services/token.interceptor';
     HttpClientModule,
     SharedModule,
     PagesModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true })
     
    
   ],

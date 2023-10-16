@@ -40,6 +40,12 @@ import { StartQuizComponent } from './user/content/start-quiz/start-quiz.compone
 
 import { MatRadioModule } from '@angular/material/radio';
 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+import { NgxUiLoaderModule } from "ngx-ui-loader";
+
+
+
 
 
 
@@ -87,6 +93,8 @@ import { MatRadioModule } from '@angular/material/radio';
     ReactiveFormsModule  ,
     MatSlideToggleModule,
     MatRadioModule,   
+    MatProgressSpinnerModule,
+    NgxUiLoaderModule,
    
       
     

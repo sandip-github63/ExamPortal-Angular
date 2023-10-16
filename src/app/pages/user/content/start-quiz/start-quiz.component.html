@@ -50,6 +50,24 @@
 
        <div class="col-md-2">
          <!-- Progress Bar -->
+
+        
+         <mat-card style="margin: 10px; background-color: aqua;" >
+          <mat-card-content class="text-center">
+            <h2>Exam Started...</h2>
+            <h3>{{getFormattedTimer()}}</h3>
+        
+            
+            <mat-progress-spinner style="margin-left: 30px;"
+              class="example-margin"
+              [color]="color"
+              [mode]="mode"
+              [value]="value"
+            >
+            </mat-progress-spinner>
+          </mat-card-content>
+        </mat-card>
+        
        </div>
 
      </div>
@@ -66,7 +84,7 @@
  
                <mat-card-header>
                  
-                  <mat-card-title style="background-color: red;" >
+                  <mat-card-title style="background-color: red; color: #ffff;" >
                     Examination result...
                     <mat-divider></mat-divider>
                   </mat-card-title>

@@ -1,5 +1,17 @@
+<ngx-ui-loader
+text="Please Wait..."
 
-<app-navbar></app-navbar>
+></ngx-ui-loader>
 
-<router-outlet></router-outlet>
+<div ngxUiLoaderBlurred blur:any="20">
+ 
+    <app-navbar></app-navbar>
+
+    <router-outlet></router-outlet>
+
+</div>
+
+
+
+
 
