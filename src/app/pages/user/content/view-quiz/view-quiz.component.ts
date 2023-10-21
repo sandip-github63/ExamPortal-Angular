@@ -59,7 +59,7 @@ export class ViewQuizComponent implements OnInit {
           },
           (error:any)=>{
 
-            alert("Error in loading Quizzes of Category");
+            console.log("Error while loading Category of Quiz: "+error);
 
           }
 

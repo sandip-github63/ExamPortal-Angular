@@ -43,6 +43,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { NgxUiLoaderModule } from "ngx-ui-loader";
+import { RegisterUserComponent } from './admin/content/register-user/register-user.component';
+import { ViewAllUsersComponent } from './admin/content/view-all-users/view-all-users.component';
+
 
 
 
@@ -68,7 +71,9 @@ import { NgxUiLoaderModule } from "ngx-ui-loader";
         sidebarusercomponent,
         ViewQuizComponent,
         QuizDetailsComponent,
-        StartQuizComponent     
+        StartQuizComponent,
+        RegisterUserComponent,
+        ViewAllUsersComponent     
         
     
    
@@ -94,7 +99,7 @@ import { NgxUiLoaderModule } from "ngx-ui-loader";
     MatSlideToggleModule,
     MatRadioModule,   
     MatProgressSpinnerModule,
-    NgxUiLoaderModule,
+    NgxUiLoaderModule,    
    
       
     

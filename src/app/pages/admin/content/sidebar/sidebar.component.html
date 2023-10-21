@@ -7,7 +7,37 @@
         
         <button mat-button [ngClass]="{ 'active': activeButton === 'profile' }" (click)="setActive('profile')" mat-list-item routerLink="/admin-dashboard/profile">
             <mat-icon >account_circle</mat-icon>  Profile
-        </button> 
+        </button>   
+        
+        
+        <button mat-button [ngClass]="{ 'active': activeButton === 'profile' }" (click)="setActive('profile'); showManageUserList = !showManageUserList " mat-list-item>
+            <mat-icon >settings icon</mat-icon>   Manage Users
+        </button>
+
+        <!-- Conditional rendering of "Manage User" list -->
+            
+
+        <div *ngIf="showManageUserList">
+            <ul class="no-bullets">
+             <li>
+               <button mat-button  (click)="setActive('profile')" mat-list-item routerLink="/admin-dashboard/view-all-users">
+                   <mat-icon >visibility</mat-icon>  View All Users
+               </button>
+                 
+             </li>
+
+             <li>
+
+                <button mat-button  (click)="setActive('profile')" mat-list-item routerLink="/admin-dashboard/add-new-user">
+                    <mat-icon >supervised_user_circle</mat-icon>  Create New User
+                </button>
+
+
+             </li>
+                <!-- Add more list items if needed -->
+             </ul>
+        </div>
+         
         
         <button mat-button [ngClass]="{ 'active': activeButton === 'categories' }" (click)="setActive('categories')" mat-list-item routerLink="/admin-dashboard/categories">
             <mat-icon >add_shopping_cart</mat-icon>  Categories
@@ -27,7 +57,9 @@
 
         <button mat-button [ngClass]="{ 'active': activeButton === 'logout' }" (click)="setActive('logout'); logout();" mat-list-item routerLink="/admin-dashboard/logout">
             <mat-icon >logout</mat-icon>  Logout
-        </button>  
+        </button> 
+        
+        
 
 
     </mat-action-list>

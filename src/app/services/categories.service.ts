@@ -23,4 +23,11 @@ export class CategoriesService {
   }
 
 
+  public deleteCategoryByCid(cId:any){
+
+    return  this.http.delete(`${endPoint}/category/${cId}`);
+
+  }
+
+
 }

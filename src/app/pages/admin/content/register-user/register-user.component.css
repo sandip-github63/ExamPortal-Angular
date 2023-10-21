@@ -1,0 +1,66 @@
+.circular-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-left: 100%;
+    
+   
+    /* Add any additional styling as needed */
+  }
+
+  .mat-card-actions {
+    display: flex;
+   
+  }
+
+  .small-button {
+    font-size: 12px; /* Adjust the font size to make the button small */
+    padding: -10px; /* You can adjust the padding to control the button size */
+  }
+
+  /* signup-form.component.css */
+.signup-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-card {
+  width: 400px;
+  padding: 20px;
+  margin-bottom: auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+.mat-card-actions button {
+  padding: 8px 16px; /* Add padding to buttons */
+  margin-right: 8px; /* Add margin between buttons */
+  border: none; /* Remove button border */
+  border-radius: 4px; /* Rounded button corners */
+  cursor: pointer;
+}
+
+.mat-card-actions button.danger {
+  background-color: #ff5733; /* Set the delete button color */
+  color: white; /* Change text color */
+}
+
+.mat-card-actions button.secondary {
+  background-color: #338fff; /* Set the update button color */
+  color: white; /* Change text color */
+}
+
+/* Hover effect for buttons */
+.mat-card-actions button:hover {
+  opacity: 0.8; /* Reduce opacity on hover */
+}
+
+.example-full-width {
+  width: 100%;
+}

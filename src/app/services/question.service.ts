@@ -41,6 +41,12 @@ export class QuestionService {
     return this.http.delete(`${endPoint}/question/${quesId}`);
 
   }
+
+  public calculateQuiz(questions:any){
+
+    return this.http.post(`${endPoint}/question/calculate-quiz`,questions);
+
+  }
   
 
 }

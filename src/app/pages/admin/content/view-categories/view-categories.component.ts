@@ -10,17 +10,15 @@ import Swal from 'sweetalert2';
 })
 export class ViewCategoriesComponent implements OnInit {
 
-  longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
-  from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
-  originally bred for hunting.`;
+  
 
-  categories:any[]|null=null;
+  categories:any[]=[];
 
-  constructor(private category:CategoriesService) { }
+  constructor(private _category:CategoriesService) { }
 
   ngOnInit(): void {
 
-    this.category.categories().subscribe(
+    this._category.categories().subscribe(
       (data:any)=>{
 
          //success
@@ -39,5 +37,41 @@ export class ViewCategoriesComponent implements OnInit {
      )
 
 
+  }
+
+
+  public deleteCategoryById(cId:any){
+
+    Swal.fire({
+      title: 'Are you sure want to delete ?',
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      denyButtonText: 'No',
+      customClass: {
+        actions: 'my-actions',
+        cancelButton: 'order-1 right-gap',
+        confirmButton: 'order-2',
+        denyButton: 'order-3',
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this._category.deleteCategoryByCid(cId).subscribe(
+           (data:any)=>{
+
+             
+            this.categories=this.categories.filter((category:any)=>category.cId!=cId);
+
+            Swal.fire('Deleted....','','success');
+           },
+           (error:any)=>{
+               console.log("something went wrong.........");
+           }
+        );
+       
+      } else if (result.isDenied) {
+        Swal.fire('Your Category is saved..', '', 'info')
+      }
+    })   
   }
 }

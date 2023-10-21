@@ -18,6 +18,8 @@ import { AddQuestionComponent } from './admin/content/add-question/add-question.
 import { ViewQuizComponent } from './user/content/view-quiz/view-quiz.component';
 import { QuizDetailsComponent } from './user/content/quiz-details/quiz-details.component';
 import { StartQuizComponent } from './user/content/start-quiz/start-quiz.component';
+import { RegisterUserComponent } from './admin/content/register-user/register-user.component';
+import { ViewAllUsersComponent } from './admin/content/view-all-users/view-all-users.component';
 
 
 const routes: Routes = [
@@ -71,6 +73,14 @@ const routes: Routes = [
         {
           path:"add-question/:quizId/:title",
           component:AddQuestionComponent
+        },
+        {
+          path:"add-new-user",
+          component:RegisterUserComponent
+        },
+        {
+          path:"view-all-users",
+          component:ViewAllUsersComponent
         }
     ]
     

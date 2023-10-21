@@ -48,9 +48,6 @@ export class StartQuizComponent implements OnInit {
         this.value = (this.timer / (this.questions.length * this.timePerQuestion * 60)) * 100;
 
         // Add one key on the answer object so that we can get the correct answer there.
-        this.questions.forEach((q: any) => {
-          q['givenAnswer'] = "";
-        });
 
         console.log("questions after key.........." + this.questions);
         this.startTimer();
@@ -84,22 +81,36 @@ export class StartQuizComponent implements OnInit {
       }
     }).then((result) => {
       if (result.isConfirmed) {
-        // Calculate
-        this.isSubmitted = true;
-        this.marksGot = 0;
-        this.correctAnswer = 0;
-        this.attempted = 0;
-        this.questions.forEach((q: any) => {
-          if (q.givenAnswer == q.answer) {
-            this.correctAnswer++;
-          }
-          if (q.givenAnswer.trim() != '') {
-            // If givenAnswer is not blank, then it seems the user attempted the question
-            this.attempted++;
-          }
-        });
-        let marksPerQuestion = this.questions[0].quiz.maxMarks / this.questions.length;
-        this.marksGot = this.correctAnswer * marksPerQuestion;
+        // // Calculate
+        // this.isSubmitted = true;
+        // this.marksGot = 0;
+        // this.correctAnswer = 0;
+        // this.attempted = 0;
+        // this.questions.forEach((q: any) => {
+        //   if (q.givenAnswer == q.answer) {
+        //     this.correctAnswer++;
+        //   }
+        //   if (q.givenAnswer.trim() != '') {
+        //     // If givenAnswer is not blank, then it seems the user attempted the question
+        //     this.attempted++;
+        //   }
+        // });
+        // let marksPerQuestion = this.questions[0].quiz.maxMarks / this.questions.length;
+        // this.marksGot = this.correctAnswer * marksPerQuestion;
+
+
+
+
+        //calculate quiz by the help of server
+
+        
+        this.calculateQuizByServer();
+
+
+
+
+
+
       } else if (result.isDenied) {
         Swal.fire('Quiz has not started..', '', 'info');
       }
@@ -128,21 +139,38 @@ export class StartQuizComponent implements OnInit {
     return `${mm} min : ${ss} sec`;
   }
 
-  public timerSubmit() {
+
+  public calculateQuizByServer(){
+
+
     this.isSubmitted = true;
-    this.marksGot = 0;
-    this.correctAnswer = 0;
-    this.attempted = 0;
-    this.questions.forEach((q: any) => {
-      if (q.givenAnswer == q.answer) {
-        this.correctAnswer++;
+
+    this._question.calculateQuiz(this.questions).subscribe(
+
+      (data:any)=>{
+
+        this.marksGot=parseFloat(Number(data.marksGot).toFixed(2));
+        this.correctAnswer=data.correctAnswer;
+        this.attempted=data.attempted;
+      },
+      (error:any)=>{
+       
+         
+           console.log("Error..............."+error);
+
       }
-      if (q.givenAnswer.trim() != '') {
-        // If givenAnswer is not blank, then it seems the user attempted the question
-        this.attempted++;
-      }
-    });
-    let marksPerQuestion = this.questions[0].quiz.maxMarks / this.questions.length;
-    this.marksGot = this.correctAnswer * marksPerQuestion;
+    );
+
   }
+
+  public timerSubmit() {
+    this.calculateQuizByServer();
+  
+  }
+
+
+  public printPDF(){
+     window.print();
+  }
+
 }

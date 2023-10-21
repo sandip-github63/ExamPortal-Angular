@@ -9,6 +9,9 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class SidebarComponent implements OnInit {
 
+
+  showManageUserList: boolean = false;
+
   //activeButton: string = 'home'; // Default active button is 'home'
 
   activeButton: string = ''; 

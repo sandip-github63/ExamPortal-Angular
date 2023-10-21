@@ -20,4 +20,16 @@ export class UserService {
 
   }
 
+  public getAllUsers(){
+
+    return this.http.get(`${endPoint}/user/`);
+
+  }
+
+  public deleteUser(userId:any){
+
+    return this.http.delete(`${endPoint}/user/${userId}`);
+       
+  }
+
 }

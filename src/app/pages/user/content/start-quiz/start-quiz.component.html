@@ -103,7 +103,7 @@
                <mat-card-actions>
 
                  <div class="container">
-                  <button class="custom-button" style="margin-right: 5px;">PDF</button>
+                  <button class="custom-button" (click)="printPDF()" style="margin-right: 5px;">PDF</button>
                   <button class="custom-button" [routerLink]="'/user-dashboard/0'">Home</button>
                  
                  </div>
@@ -117,4 +117,3 @@
          </div>
     </div>
  </div>
- 
