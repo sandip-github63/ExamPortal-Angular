@@ -20,6 +20,7 @@ import { QuizDetailsComponent } from './user/content/quiz-details/quiz-details.c
 import { StartQuizComponent } from './user/content/start-quiz/start-quiz.component';
 import { RegisterUserComponent } from './admin/content/register-user/register-user.component';
 import { ViewAllUsersComponent } from './admin/content/view-all-users/view-all-users.component';
+import { ViewRoleComponent } from './admin/content/view-role/view-role.component';
 
 
 const routes: Routes = [
@@ -81,7 +82,14 @@ const routes: Routes = [
         {
           path:"view-all-users",
           component:ViewAllUsersComponent
+        },
+
+        {
+          path:"view-role/:userId",
+          component:ViewRoleComponent
         }
+       
+
     ]
     
   },

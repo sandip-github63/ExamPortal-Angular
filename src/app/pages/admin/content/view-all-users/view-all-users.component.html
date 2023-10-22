@@ -1,21 +1,38 @@
 <div class="bootstrap-wrapper" *ngIf="users">
-    <mat-card>
+    <mat-card class="card-with-border">
         <mat-card-header>
-            <h2>All Users</h2>
+            <div class="container">
+                   <div class="row">
+                         <div class="col">
+
+                            <h2>All Users</h2>
+
+                         </div>
+                         <div class="col">
+                             <!--search bar create -->
+               
+                             <mat-form-field class="search-bar">
+                                <mat-icon matPrefix>search</mat-icon>
+                                <input #dataInput matInput placeholder="Search Users"  (keyup)="filterUsers(dataInput.value)">
+                            </mat-form-field>
+                               
+                         </div>
+                   </div>
+            </div>
+
         </mat-card-header>
         <div class="container">
             <div class="row" >
-                <div class="col-md-4" *ngFor="let u of users">
-                    <!-- Content for the first column -->
-                    
+                <div class="col-md-4" *ngFor="let u of filteredUsers">
+                    <!-- Content for the first column -->                                         
                     <img mat-card-image>
                     <mat-divider></mat-divider>
-                    <mat-card-content>
+                    <mat-card-content class="card-with-border-color">
                         <h3 style="color: blue;">First Name : <span style="color: red;">{{u.firstName}}</span></h3>
                         <mat-divider></mat-divider>
                         <h3 style="color: blue;">Last Name : <span style="color: red;">{{u.lastName}}</span></h3>
                         <mat-divider></mat-divider>
-                        <h3 style="color: blue;">Email Address : <span style="color: red; ">{{u.email}}</span></h3>
+                        <h3 style="color: blue;" class="email">Email Address : <span style="color: red; " >{{u.email}}</span></h3>
                          <mat-divider></mat-divider>
                         <h3 style="color: blue;">Status : <span style="color: red;">{{u.enable}}</span></h3>
                          <mat-divider></mat-divider>
@@ -26,7 +43,7 @@
                     <mat-card-actions>
                         <button class="danger" (click)="deleteUserById(u.userId)">Delete User</button>
                       
-                        <button class="secondary" >View Role</button>   
+                        <button class="secondary" [routerLink]=" '/admin-dashboard/view-role/'+ u.userId" >View Role</button>   
               
                           
                     </mat-card-actions>
@@ -34,6 +51,7 @@
             </div>
         </div>
     </mat-card>
+   
 
     
 </div>
@@ -48,3 +66,4 @@
          </div>
       </div>
 </div>
+

@@ -8,10 +8,11 @@ import Swal from 'sweetalert2';
   styleUrls: ['./view-all-users.component.css']
 })
 export class ViewAllUsersComponent implements OnInit {
-  public users: any;
+  public users: any; 
 
   showManageUserList: boolean = false;
 
+  public filteredUsers: any; 
 
   constructor(private _user: UserService) {}
 
@@ -19,6 +20,8 @@ export class ViewAllUsersComponent implements OnInit {
     this._user.getAllUsers().subscribe(
       (data: any) => {
         this.users = data;
+
+        this.filteredUsers=this.users;
 
         for (let u of this.users) {
           if (u.enable) {
@@ -32,6 +35,8 @@ export class ViewAllUsersComponent implements OnInit {
         console.log("Error during fetching List of Users: " + error);
       }
     );
+
+    
   }
 
   public deleteUserById(userId: any) {
@@ -65,5 +70,22 @@ export class ViewAllUsersComponent implements OnInit {
   }
 
 
+  public filterUsers(searchValue: string) {
+     
+    if (!searchValue) {
+      // If the search input is empty, show all users
+      this.filteredUsers = this.users;
+    } else {
+      // Filter the users based on the search input
+      this.filteredUsers = this.users.filter((user: any) => {
+        // You can customize the search logic based on your requirements
+        return (
+          user.firstName.toLowerCase().includes(searchValue.toLowerCase()) ||
+          user.lastName.toLowerCase().includes(searchValue.toLowerCase()) ||
+          user.email.toLowerCase().includes(searchValue.toLowerCase())
+        );
+      });
+    }
+  }
 
 }

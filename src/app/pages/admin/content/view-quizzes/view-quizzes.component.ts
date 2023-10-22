@@ -11,6 +11,8 @@ export class ViewQuizzesComponent implements OnInit {
 
   quizzes:any|null=[];
 
+  public filteredQuiz: any; 
+
   constructor(private quiz:QuizService) { }
 
   ngOnInit(): void {
@@ -19,6 +21,8 @@ export class ViewQuizzesComponent implements OnInit {
     this.quiz.Quizzes().subscribe(
       (data)=>{
         this.quizzes=data;
+        this.filteredQuiz=this.quizzes;
+        
 
       },
       (error)=>{
@@ -78,5 +82,23 @@ export class ViewQuizzesComponent implements OnInit {
     })   
 
   } 
+
+
+  public filterQuizzes(searchValue: string) {
+     
+    if (!searchValue) {
+      // If the search input is empty, show all users
+      this.filteredQuiz = this.quizzes;
+    } else {
+      // Filter the users based on the search input
+      this.filteredQuiz = this.quizzes.filter((quiz: any) => {
+        // You can customize the search logic based on your requirements
+        return (
+          quiz.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+          quiz.category.title.toLowerCase().includes(searchValue.toLowerCase())
+        );
+      });
+    }
+  }
 
 }

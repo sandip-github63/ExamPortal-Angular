@@ -1,0 +1,78 @@
+/* Style the wrapper */
+.bootstrap-wrapper {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style the outer mat-card */
+mat-card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Style the inner mat-card */
+mat-card.mat-card-inner {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* Style the h2 inside the inner mat-card */
+mat-card.mat-card-inner mat-card-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Style the mat-divider */
+mat-divider {
+    margin: 20px 0;
+    border-color: #ccc;
+}
+
+/* Style the h4 elements */
+mat-card.mat-card-inner mat-card-content h4 {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Style the span elements within h4 */
+mat-card.mat-card-inner mat-card-content h4 span {
+    color: #007bff; /* Blue color for the 'Normal User' and 'Admin' text */
+}
+
+/* Style the mat-slide-toggle within h4 */
+mat-card.mat-card-inner mat-card-content h4 mat-slide-toggle {
+    margin-left: 10px;
+}
+
+/* Style the container and row */
+.container, .row {
+    margin: 0;
+}
+
+/* Style the col */
+.col {
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.danger {
+    background-color: #ff5252;
+    color: #fff;
+    margin-right: 10px;
+}
