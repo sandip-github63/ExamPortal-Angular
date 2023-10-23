@@ -85,7 +85,7 @@ const routes: Routes = [
         },
 
         {
-          path:"view-role/:userId",
+          path:"view-role/:userId/:firstName",
           component:ViewRoleComponent
         }
        

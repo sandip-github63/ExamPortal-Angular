@@ -43,7 +43,7 @@
                     <mat-card-actions>
                         <button class="danger" (click)="deleteUserById(u.userId)">Delete User</button>
                       
-                        <button class="secondary" [routerLink]=" '/admin-dashboard/view-role/'+ u.userId" >View Role</button>   
+                        <button class="secondary" [routerLink]=" '/admin-dashboard/view-role/'+ u.userId + '/'+ u.firstName " >View Role</button>   
               
                           
                     </mat-card-actions>

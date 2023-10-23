@@ -14,7 +14,7 @@
                 <!-- Nested Angular Material card -->
                 <mat-card-header>
                   <!-- Card header with a title -->
-                  <h1>Role of User : Name</h1>
+                  <h1 style="text-transform: uppercase;">Role of : {{firstName}}</h1>
                   
                 </mat-card-header>
   
@@ -23,16 +23,16 @@
   
                 <mat-card-content>
                   <!-- Content inside the nested card -->
-                  <h2>Current Role : <span>Normal User</span></h2>
+                  <h2>Current Role : <span>{{currentRole}}</span></h2>
                   <h3>Change Role
                     <span>
-                      <mat-slide-toggle>Admin</mat-slide-toggle>
+                      <mat-slide-toggle [(ngModel)]="changeRoleValue">{{changeRoleText}}</mat-slide-toggle>
                     </span>
                   </h3>
                 </mat-card-content>
 
                  <mat-card-actions>
-                      <button class="danger">Change</button>
+                      <button class="danger" (click)="updateRole()">Change</button>
                  </mat-card-actions>
 
               </mat-card>
@@ -42,4 +42,3 @@
       </mat-card-content>
     </mat-card>
   </div>
-  
