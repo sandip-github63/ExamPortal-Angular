@@ -46,6 +46,8 @@ import { NgxUiLoaderModule } from "ngx-ui-loader";
 import { RegisterUserComponent } from './admin/content/register-user/register-user.component';
 import { ViewAllUsersComponent } from './admin/content/view-all-users/view-all-users.component';
 import { ViewRoleComponent } from './admin/content/view-role/view-role.component';
+import { WelcomeChildComponent } from './admin/content/welcome-child/welcome-child.component';
+
 
 
 
@@ -75,7 +77,8 @@ import { ViewRoleComponent } from './admin/content/view-role/view-role.component
         StartQuizComponent,
         RegisterUserComponent,
         ViewAllUsersComponent,
-        ViewRoleComponent     
+        ViewRoleComponent,
+        WelcomeChildComponent     
         
     
    

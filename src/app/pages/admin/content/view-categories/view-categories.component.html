@@ -5,7 +5,7 @@
   <mat-card-content>
     <div class="bootstrap-wrapper">
       <div class="row">
-        <div class="col-md-6" style="margin-top: 10px;" *ngFor="let c of categories">
+        <div class="col-md-6" style="margin-top: 10px;" *ngFor="let c of pagedUsers">
           <mat-card class="card-fixed-size">
             <mat-card-header>
               <h2>{{c.title}}</h2>
@@ -23,3 +23,8 @@
     </div>
   </mat-card-content>
 </mat-card>
+
+
+<mat-paginator [length]="categories.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOp"
+  (page)="onPageChange($event)">
+</mat-paginator>

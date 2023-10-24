@@ -1,0 +1,123 @@
+.home {
+    font-size: 60px;
+  }
+  
+  .home-area {
+    background-color: #87CEEB;
+  }
+  
+  .learn-page {
+    margin: 0 auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  
+  .hrefline {
+    text-decoration: none;
+  }
+  
+  .button-btn {
+    width: 20%;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  
+  .row-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+  }
+  
+  .body-colpage {
+    text-align: center;
+    padding-top: 30px;
+    color: white;
+    width: 30%;
+    margin: 2%;
+  
+    .body-card {
+      background-color: white;
+      padding: 3% 8%;
+      transition: 0.3s;
+      color: black;
+      border-radius: 10px;
+    }
+  
+    .ionsicons {
+      font-size: 100px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .learn-page {
+      font-size: 1rem;
+    }
+  
+    .button-btn {
+      width: 50%;
+      font-size: 1rem;
+    }
+  
+    .row-card {
+      display: block;
+      padding: 10px;
+  
+      .body-colpage {
+        width: 100%;
+  
+        .body-card {
+          padding: 4% 7%;
+        }
+      }
+    }
+  }
+
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.danger {
+    background-color: #ff5252;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.secondary {
+    background-color: #2196F3;
+    color: #fff;
+}
+
+
+
+/* Hover effect for the .danger button */
+.danger:hover {
+    background-color: #ffff; /* Change to a different color on hover */
+    color: black;
+}
+
+/* Hover effect for the .secondary button */
+.secondary:hover {
+    background-color: #1565C0; /* Change to a different color on hover */
+}
+
+* Example of using a Google Font in your CSS */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+  
+
+
+
+
+
+
+  

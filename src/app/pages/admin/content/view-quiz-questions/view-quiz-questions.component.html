@@ -28,7 +28,7 @@
 
       <mat-card-subtitle>        
        
-         <div *ngFor="let q of questions; let i= index">
+         <div *ngFor="let q of pagedUsers; let i= index">
           <mat-card class="full-width-subtitle">
             <mat-card-header>
                <mat-card-title>
@@ -104,5 +104,12 @@
     
   </mat-card>
   <br>
- 
+
   
+<mat-paginator [length]="questions.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOp"
+(page)="onPageChange($event)">
+</mat-paginator>
+
+
+
+

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { CategoriesService } from 'src/app/services/categories.service';
 import Swal from 'sweetalert2';
 
@@ -13,6 +14,16 @@ export class ViewCategoriesComponent implements OnInit {
   
 
   categories:any[]=[];
+
+  //pagination 
+
+  pageSize:any=2;
+
+  currentPage = 0;
+
+  pageSizeOp=[1, 2, 3, 10];
+
+  @ViewChild(MatPaginator) paginator: MatPaginator| any;
 
   constructor(private _category:CategoriesService) { }
 
@@ -74,4 +85,24 @@ export class ViewCategoriesComponent implements OnInit {
       }
     })   
   }
+
+  // Add a function to handle page change
+  onPageChange(event:any) {
+
+    this.pageSize = event.pageSize; 
+
+    this.currentPage = event.pageIndex;
+
+    this.paginator.pageIndex = this.currentPage;
+
+  
+  }
+
+  get pagedUsers() {
+    
+    const startIndex = this.currentPage * this.pageSize;
+
+    return this.categories.slice(startIndex, startIndex + this.pageSize);
+  }
+
 }

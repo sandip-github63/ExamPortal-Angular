@@ -23,7 +23,7 @@
         </mat-card-header>
         <div class="container">
             <div class="row" >
-                <div class="col-md-4" *ngFor="let u of filteredUsers">
+                <div class="col-md-4" *ngFor="let u of pagedUsers">
                     <!-- Content for the first column -->                                         
                     <img mat-card-image>
                     <mat-divider></mat-divider>
@@ -67,3 +67,8 @@
       </div>
 </div>
 
+
+
+<mat-paginator [length]="filteredUsers.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOp"
+  (page)="onPageChange($event)">
+</mat-paginator>

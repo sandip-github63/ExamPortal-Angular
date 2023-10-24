@@ -21,6 +21,7 @@ import { StartQuizComponent } from './user/content/start-quiz/start-quiz.compone
 import { RegisterUserComponent } from './admin/content/register-user/register-user.component';
 import { ViewAllUsersComponent } from './admin/content/view-all-users/view-all-users.component';
 import { ViewRoleComponent } from './admin/content/view-role/view-role.component';
+import { WelcomeChildComponent } from './admin/content/welcome-child/welcome-child.component';
 
 
 const routes: Routes = [
@@ -87,6 +88,11 @@ const routes: Routes = [
         {
           path:"view-role/:userId/:firstName",
           component:ViewRoleComponent
+        },
+
+        {
+          path:"welcome-child",
+          component:WelcomeChildComponent
         }
        
 

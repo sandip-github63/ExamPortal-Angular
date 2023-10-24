@@ -84,3 +84,7 @@
   width: 100%;
 }
 
+/* styles.css or your component's CSS file */
+.paginator-custom-color {
+  color: #007bff; /* Change this to your desired text color */
+}

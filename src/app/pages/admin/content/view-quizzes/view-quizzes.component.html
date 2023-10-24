@@ -15,7 +15,7 @@
       </mat-card-header>
   
       <mat-card-content>
-        <mat-card class="" style="margin-top: 40px; margin-right: 20px; margin-left: 20px;" *ngFor="let q of filteredQuiz">
+        <mat-card class="" style="margin-top: 40px; margin-right: 20px; margin-left: 20px;" *ngFor="let q of pagedUsers">
           <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title>
@@ -47,3 +47,8 @@
     </mat-card>
   </div>
   
+
+
+<mat-paginator class="paginator-custom-color" [length]="filteredQuiz.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOp"
+  (page)="onPageChange($event)">
+</mat-paginator>
