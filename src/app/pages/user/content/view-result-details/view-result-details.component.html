@@ -1,0 +1,59 @@
+<h4 style="margin-top: 20px; background-color: rgba(255, 165, 0, 0.8); color: #333; padding: 5px; font-style: italic;" class="heading" *ngIf="isData">
+    <p>Check the correct answer</p>
+</h4>
+  
+<!--Result Display Started..-->
+
+<div class="bootstrap-wrapper" >
+    <div class="container mr-5">
+        <div class="row">
+            
+            <div class="col-md">
+                <ng-container *ngIf="questions">
+                    <mat-card *ngFor="let q of questions; let i = index" class="mt10">
+                        <mat-card-content>
+                            <span style="display: inline-block; color: green;"><b>Q{{i + 1}})</b> </span>
+                            <span style="display: inline-block; margin-left: 5px;" [innerHTML]="q.content"></span>
+                            <mat-divider></mat-divider>
+                            <div class="row mt20">
+                                <div class="col-md-6">
+                                    <mat-radio-group [name]="'q' + i" >
+                                        <mat-radio-button [value]="q.option1" [checked]="q.givenAnswer === q.option1">{{q.option1}}</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-radio-group [name]="'q' + i" >
+                                        <mat-radio-button [value]="q.option2" [checked]="q.givenAnswer === q.option2">{{q.option2}}</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                            </div>
+                            <div class="row mt10">
+                                <div class="col-md-6">
+                                    <mat-radio-group [name]="'q' + i" >
+                                        <mat-radio-button [value]="q.option3" [checked]="q.givenAnswer === q.option3">{{q.option3}}</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-radio-group [name]="'q' + i" >
+                                        <mat-radio-button [value]="q.option4" [checked]="q.givenAnswer === q.option4">{{q.option4}}</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>  
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Result Display Ended..-->
+
+<!--show Error Message if data not found-->
+
+<h4 style="margin-top: 20px; background-color: rgba(255, 165, 0, 0.8); color: #333; padding: 5px; font-style: italic;" class="heading" *ngIf="!isData">
+    <p>No Exam Attended...</p>
+</h4>
+  
+
+<!--Error message ended..-->

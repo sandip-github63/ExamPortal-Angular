@@ -48,10 +48,9 @@
          </ng-container>
        </div>
 
+       <!-- Progress Bar -->
        <div class="col-md-2">
-         <!-- Progress Bar -->
-
-        
+             
          <mat-card style="margin: 10px; background-color: aqua;" >
           <mat-card-content class="text-center">
             <h2>Exam Started...</h2>
@@ -104,13 +103,15 @@
 
                  <div class="container">
                   <button class="custom-button" (click)="printPDF()" style="margin-right: 5px;">PDF</button>
-                  <button class="custom-button" [routerLink]="'/user-dashboard/0'">Home</button>
+                  <button class="custom-button" [routerLink]="'/user-dashboard/0'" style="margin-right: 5px;">Home</button>
+                  <button class="custom-button" (click)="redirectToComponent()">View</button>
                  
                  </div>
 
                 
                   
                </mat-card-actions>
+               
 
              </mat-card>
             

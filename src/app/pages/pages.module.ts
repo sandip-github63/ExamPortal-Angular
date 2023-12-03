@@ -47,6 +47,7 @@ import { RegisterUserComponent } from './admin/content/register-user/register-us
 import { ViewAllUsersComponent } from './admin/content/view-all-users/view-all-users.component';
 import { ViewRoleComponent } from './admin/content/view-role/view-role.component';
 import { WelcomeChildComponent } from './admin/content/welcome-child/welcome-child.component';
+import { ViewResultDetailsComponent } from './user/content/view-result-details/view-result-details.component';
 
 
 
@@ -78,7 +79,8 @@ import { WelcomeChildComponent } from './admin/content/welcome-child/welcome-chi
         RegisterUserComponent,
         ViewAllUsersComponent,
         ViewRoleComponent,
-        WelcomeChildComponent     
+        WelcomeChildComponent,
+        ViewResultDetailsComponent     
         
     
    

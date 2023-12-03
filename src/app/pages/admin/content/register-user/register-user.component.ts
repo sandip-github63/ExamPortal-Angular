@@ -47,7 +47,7 @@ export class RegisterUserComponent implements OnInit {
   }
 
   formSubmit(){
-
+    
     // Check if the form is valid before submitting
 
     
@@ -102,6 +102,8 @@ export class RegisterUserComponent implements OnInit {
       (error)=>{    
         
         //error when invalid username
+        
+        console.log(error);
 
         Swal.fire({
           icon: 'error',

@@ -22,6 +22,7 @@ import { RegisterUserComponent } from './admin/content/register-user/register-us
 import { ViewAllUsersComponent } from './admin/content/view-all-users/view-all-users.component';
 import { ViewRoleComponent } from './admin/content/view-role/view-role.component';
 import { WelcomeChildComponent } from './admin/content/welcome-child/welcome-child.component';
+import { ViewResultDetailsComponent } from './user/content/view-result-details/view-result-details.component';
 
 
 const routes: Routes = [
@@ -104,18 +105,23 @@ const routes: Routes = [
     component:UserDashboardComponent,
     canActivate:[UserGuard], //activate user guard to this route
     children:[
+      
       {
-         path:":cId",
-         component:ViewQuizComponent
-
-      },
+        path:"app-view-result-details",
+        component:ViewResultDetailsComponent
+      },     
 
       {
         path:"quiz-details/:quizId",
         component:QuizDetailsComponent
 
-      },    
+      },  
 
+      {
+        path:":cId",
+        component:ViewQuizComponent
+
+      },   
 
     ]
     
@@ -125,7 +131,8 @@ const routes: Routes = [
     path:"start-quiz/:quizId",
     component:StartQuizComponent,
     canActivate:[UserGuard]
-  }
+  },
+  
 
 ];
 

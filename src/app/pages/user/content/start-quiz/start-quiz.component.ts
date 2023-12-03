@@ -2,7 +2,7 @@ import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
 
@@ -28,7 +28,7 @@ export class StartQuizComponent implements OnInit {
   timer: any;
   timePerQuestion: any = 1;
 
-  constructor(private locationSt: LocationStrategy, private _route: ActivatedRoute, private _question: QuestionService) { }
+  constructor(private locationSt: LocationStrategy, private _route: ActivatedRoute,private router: Router, private _question: QuestionService) { }
 
   ngOnInit(): void {
     this.preventBackButton();
@@ -81,35 +81,10 @@ export class StartQuizComponent implements OnInit {
       }
     }).then((result) => {
       if (result.isConfirmed) {
-        // // Calculate
-        // this.isSubmitted = true;
-        // this.marksGot = 0;
-        // this.correctAnswer = 0;
-        // this.attempted = 0;
-        // this.questions.forEach((q: any) => {
-        //   if (q.givenAnswer == q.answer) {
-        //     this.correctAnswer++;
-        //   }
-        //   if (q.givenAnswer.trim() != '') {
-        //     // If givenAnswer is not blank, then it seems the user attempted the question
-        //     this.attempted++;
-        //   }
-        // });
-        // let marksPerQuestion = this.questions[0].quiz.maxMarks / this.questions.length;
-        // this.marksGot = this.correctAnswer * marksPerQuestion;
-
-
-
-
-        //calculate quiz by the help of server
-
-        
+    
         this.calculateQuizByServer();
 
-
-
-
-
+        //question list send to the route app-view-result-details/:quizId
 
       } else if (result.isDenied) {
         Swal.fire('Quiz has not started..', '', 'info');
@@ -173,4 +148,15 @@ export class StartQuizComponent implements OnInit {
      window.print();
   }
 
+
+  redirectToComponent(){
+    this.navigateToTargetComponent();
+  }
+
+  navigateToTargetComponent() {
+    this.router.navigate(['/user-dashboard/app-view-result-details'], {
+      state: { myquestions: JSON.stringify(this.questions)}
+    });
+  }
+  
 }
