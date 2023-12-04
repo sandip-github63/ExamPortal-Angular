@@ -47,6 +47,12 @@ export class QuestionService {
     return this.http.post(`${endPoint}/question/calculate-quiz`,questions);
 
   }
+
+  public getAnswerOfQuestions(questions:any[]){
+
+    return this.http.post(`${endPoint}/question/get-answer`,questions);
+     
+  }
   
 
 }

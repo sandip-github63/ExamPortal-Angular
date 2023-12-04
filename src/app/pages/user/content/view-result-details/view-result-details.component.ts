@@ -30,7 +30,19 @@ export class ViewResultDetailsComponent implements OnInit {
 
   isData:boolean=true;
 
-  listOfQuesId:any[]=[];
+  listOfQuesId:any={
+     quesId:[]
+  }
+
+  answerOfQuestions:any={
+      message:"",
+      answer:{
+          1:"",
+          2:""
+      }
+  }
+
+  answers:any;
   
   constructor(private route:Router,private locationSt: LocationStrategy, private _route: ActivatedRoute, private _question: QuestionService) {
 
@@ -59,15 +71,26 @@ export class ViewResultDetailsComponent implements OnInit {
     
      //filter quesId from questions then server hit for answer of particular question
 
-     this.listOfQuesId=this.questions.map(question=>question.quesId);
-    //  alert(this.listOfQuesId)
+     this.listOfQuesId.quesId=this.questions.map(question=>question.quesId);
 
-     //send list of qeusId to server to get answer of particular question
+     console.log(this.listOfQuesId);
+     this._question.getAnswerOfQuestions(this.listOfQuesId).subscribe(
+       (data)=>{
+          this.answerOfQuestions=data;
+          console.log(data)
+
+          console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+          this.answers=this.answerOfQuestions.answer;
+
+       },
+       (error)=>{
+          console.log("Error ....................."+error);
+       }
+     ); 
      
-
-    
+     
+         
   } 
-
 
 }
 

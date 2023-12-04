@@ -48,3 +48,29 @@
     font-size: 2em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Optional: add a subtle text shadow */
 }
+
+/* css for Circle and Cancel Icon */
+
+.correct-icon,
+.incorrect-icon {
+  vertical-align: middle;
+  margin-left: 5px; /* Adjust the margin as needed */
+  font-size: 25px; /* Adjust the font size as needed */
+}
+
+.correct-icon {
+  color: green;
+}
+
+.incorrect-icon {
+  color: red;
+}
+
+.custom-disabled .mat-radio-button {
+  color: black; /* Set the desired text color for disabled radio buttons */
+  cursor: not-allowed; /* Set the cursor to not-allowed for disabled radio buttons */
+}
+
+.custom-disabled .mat-radio-button {
+  pointer-events: none; /* Disable pointer events to make the radio button unselectable */
+}

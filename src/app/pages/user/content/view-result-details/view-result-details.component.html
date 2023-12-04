@@ -6,11 +6,10 @@
 
 <div class="bootstrap-wrapper" >
     <div class="container mr-5">
-        <div class="row">
-            
+        <div class="row">            
             <div class="col-md">
                 <ng-container *ngIf="questions">
-                    <mat-card *ngFor="let q of questions; let i = index" class="mt10">
+                    <mat-card *ngFor="let q of questions; let i = index" class="mt10">                   
                         <mat-card-content>
                             <span style="display: inline-block; color: green;"><b>Q{{i + 1}})</b> </span>
                             <span style="display: inline-block; margin-left: 5px;" [innerHTML]="q.content"></span>
@@ -18,24 +17,32 @@
                             <div class="row mt20">
                                 <div class="col-md-6">
                                     <mat-radio-group [name]="'q' + i" >
-                                        <mat-radio-button [value]="q.option1" [checked]="q.givenAnswer === q.option1">{{q.option1}}</mat-radio-button>
+                                        <mat-radio-button [value]="q.option1" [checked]="q.givenAnswer === q.option1" [disabled]="q.givenAnswer != q.option1" class="custom-disabled"> <span class="mat-radio-button-text">{{ q.option1 }}</span></mat-radio-button>
+                                        <mat-icon class="correct-icon" *ngIf="answers[q.quesId]===q.option1" >check_circle</mat-icon>
+                                        <mat-icon class="incorrect-icon" *ngIf="answers[q.quesId]!=q.option1 && q.givenAnswer === q.option1 ">cancel</mat-icon>
                                     </mat-radio-group>
                                 </div>
                                 <div class="col-md-6">
                                     <mat-radio-group [name]="'q' + i" >
-                                        <mat-radio-button [value]="q.option2" [checked]="q.givenAnswer === q.option2">{{q.option2}}</mat-radio-button>
+                                        <mat-radio-button [value]="q.option2" [checked]="q.givenAnswer === q.option2" [disabled]="q.givenAnswer != q.option2">{{q.option2}}</mat-radio-button>
+                                        <mat-icon class="correct-icon" *ngIf="answers[q.quesId]===q.option2">check_circle</mat-icon>
+                                        <mat-icon class="incorrect-icon" *ngIf="answers[q.quesId]!=q.option2 && q.givenAnswer === q.option2">cancel</mat-icon>
                                     </mat-radio-group>
                                 </div>
                             </div>
                             <div class="row mt10">
                                 <div class="col-md-6">
                                     <mat-radio-group [name]="'q' + i" >
-                                        <mat-radio-button [value]="q.option3" [checked]="q.givenAnswer === q.option3">{{q.option3}}</mat-radio-button>
+                                        <mat-radio-button [value]="q.option3" [checked]="q.givenAnswer === q.option3" [disabled]="q.givenAnswer != q.option3">{{q.option3}}</mat-radio-button>
+                                        <mat-icon class="correct-icon"  *ngIf="answers[q.quesId]===q.option3">check_circle</mat-icon>
+                                        <mat-icon class="incorrect-icon" *ngIf="answers[q.quesId]!=q.option3 && q.givenAnswer === q.option3 ">cancel</mat-icon>
                                     </mat-radio-group>
                                 </div>
                                 <div class="col-md-6">
                                     <mat-radio-group [name]="'q' + i" >
-                                        <mat-radio-button [value]="q.option4" [checked]="q.givenAnswer === q.option4">{{q.option4}}</mat-radio-button>
+                                        <mat-radio-button [value]="q.option4" [checked]="q.givenAnswer === q.option4" [disabled]="q.givenAnswer != q.option4">{{q.option4}}</mat-radio-button>
+                                        <mat-icon class="correct-icon" *ngIf="answers[q.quesId]===q.option4">check_circle</mat-icon>
+                                        <mat-icon class="incorrect-icon" *ngIf="answers[q.quesId]!=q.option4 && q.givenAnswer === q.option4 ">cancel</mat-icon>
                                     </mat-radio-group>
                                 </div>
                             </div>
