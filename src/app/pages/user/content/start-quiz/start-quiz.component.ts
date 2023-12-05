@@ -66,10 +66,13 @@ export class StartQuizComponent implements OnInit {
     });
   }
 
+
+  
+
+
   public submitQuiz() {
     Swal.fire({
       title: 'Are you sure to submit the Quiz?',
-      showDenyButton: true,
       showCancelButton: true,
       confirmButtonText: 'Yes',
       denyButtonText: 'No',

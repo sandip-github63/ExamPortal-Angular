@@ -92,6 +92,14 @@ export class ViewResultDetailsComponent implements OnInit {
          
   } 
 
+
+     // In your component class
+isRadioButtonDisabled(q: any, option: string): boolean {
+  return q.givenAnswer !== option;
+}
+
+
+
 }
 
 

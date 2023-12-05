@@ -66,11 +66,11 @@
   color: red;
 }
 
-.custom-disabled .mat-radio-button {
-  color: black; /* Set the desired text color for disabled radio buttons */
-  cursor: not-allowed; /* Set the cursor to not-allowed for disabled radio buttons */
+/* Add this in your component CSS or global stylesheet */
+.custom-disabled.mat-radio-button {
+  pointer-events: none; /* Disable mouse events for the radio button */
 }
 
-.custom-disabled .mat-radio-button {
-  pointer-events: none; /* Disable pointer events to make the radio button unselectable */
+.custom-disabled .mat-radio-label {
+  color: inherit; /* Optionally, reset the color to inherit from the parent */
 }
