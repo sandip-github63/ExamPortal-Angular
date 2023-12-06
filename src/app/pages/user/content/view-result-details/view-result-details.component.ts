@@ -87,6 +87,9 @@ export class ViewResultDetailsComponent implements OnInit {
           console.log("Error ....................."+error);
        }
      ); 
+
+
+     this.preventBackButton();
      
      
          
@@ -97,6 +100,14 @@ export class ViewResultDetailsComponent implements OnInit {
 isRadioButtonDisabled(q: any, option: string): boolean {
   return q.givenAnswer !== option;
 }
+
+public preventBackButton() {
+  history.pushState(null, '', location.href);
+  this.locationSt.onPopState(() => {
+    history.pushState(null, "", location.href);
+  });
+}
+
 
 
 

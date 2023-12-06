@@ -1,5 +1,5 @@
 import { LocationStrategy } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -34,7 +34,22 @@ export class StartQuizComponent implements OnInit {
     this.preventBackButton();
     this.quizId = this._route.snapshot.params.quizId;
     this.loadAllQuestions();
+
+    // Set flag when quiz starts
+   sessionStorage.setItem('quizStarted', 'true');
+
+   document.addEventListener('visibilitychange', this.handleVisibilityChange);
+
+
   }
+
+
+  handleVisibilityChange = () => {
+    // Check visibility state and show a warning or take appropriate action
+    if (document.visibilityState === 'hidden') {
+      this.timerSubmit();
+    }
+  } 
 
   public loadAllQuestions() {
     this._question.getQuestionOfQuizWithLimit(this.quizId).subscribe(
@@ -163,3 +178,4 @@ export class StartQuizComponent implements OnInit {
   }
   
 }
+

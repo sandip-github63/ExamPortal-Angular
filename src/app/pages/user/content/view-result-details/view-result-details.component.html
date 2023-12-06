@@ -51,6 +51,14 @@
                             </div>
                         </mat-card-content>
                     </mat-card>  
+                    <mat-card-actions>
+
+                        <div class="container text-center">
+                         <button class="custom-button" [routerLink]="'/user-dashboard/0'"  style="margin-right: 5px;">Exit</button>                        
+                        </div>                
+                         
+                      </mat-card-actions>
+                      
                 </ng-container>
             </div>
         </div>
@@ -58,12 +66,14 @@
 </div>
 
 <!--Result Display Ended..-->
+<!--show Buttons Started-->
 
+
+
+<!--show Buttons Ended..-->
 <!--show Error Message if data not found-->
 
 <h4 style="margin-top: 20px; background-color: rgba(255, 165, 0, 0.8); color: #333; padding: 5px; font-style: italic;" class="heading" *ngIf="!isData">
     <p>No Exam Attended...</p>
 </h4>
-  
-
 <!--Error message ended..-->
