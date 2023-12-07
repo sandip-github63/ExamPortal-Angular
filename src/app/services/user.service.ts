@@ -15,7 +15,7 @@ export class UserService {
 
   public addUser(user:User){
 
-    return this.http.post(`${endPoint}/user/`,user);
+    return this.http.post(`${endPoint}/user/register`,user);
 
 
   }
