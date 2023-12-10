@@ -23,4 +23,8 @@ export class ResetService {
      return this.http.post(`${endPoint}/api/reset-password/validate-otp`,emailandOtp);
   }
 
+  public updateUserPassword(newAndConfirmPassword:any){
+     return this.http.put(`${endPoint}/api/reset-password/update-password`,newAndConfirmPassword);
+  }
+
 }

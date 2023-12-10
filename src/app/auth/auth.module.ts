@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card'; // Add this line
 import { HttpClientModule } from '@angular/common/http';
 import { ResetComponent } from './reset/reset.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -40,7 +41,8 @@ import { ResetComponent } from './reset/reset.component';
     MatCardModule,
     FormsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule
 
     
   ]

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { ResetService } from 'src/app/services/reset.service';
 
 @Component({
@@ -26,13 +28,19 @@ export class ResetComponent implements OnInit {
 
   passwordFieldType: string = 'password';
 
-  constructor(private fb: FormBuilder,private _reset:ResetService) {
+  newAndConfirmPassword:any={
+     email:"",
+     newPassword:"",
+     confirmPassword:""
+  };
+
+  constructor(private fb: FormBuilder,private _reset:ResetService,private _snack:MatSnackBar,private _router: Router) {
 
     this.resetForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]]  ,
       otp: [''] ,
       newpassword: ['']  ,
-      confirmpassword: ['']  
+      confirmPassword: ['']  
     });
     
 
@@ -43,9 +51,7 @@ export class ResetComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-
-   
+  ngOnInit(): void {   
 
   }
 
@@ -55,14 +61,13 @@ export class ResetComponent implements OnInit {
 
       const enteredEmail = this.resetForm.value.email;
 
-      alert(enteredEmail)
-
       this.EmailId.email=enteredEmail;
 
       this._reset.generateOTP(this.EmailId).subscribe(
         (data)=>{
              this.isShowEmail=false;
-             alert("OTP send successfully")
+             this._snack.open('OTP send Successfully', '', { duration: 3000});
+
         },
         (error)=>{
           console.log("OTP ERRORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRr..............")
@@ -87,11 +92,13 @@ export class ResetComponent implements OnInit {
     this._reset.validateOTP(this.emailandOTP).subscribe(
       (data)=>{
           this.isShowPassword=true;
-          alert("OTP validate successfully")
+          this._snack.open('OTP validate successfully ','',{duration:3000});
+         
       },
       (error)=>{
 
-          alert("Please enter valid otp")
+         this._snack.open('Invalid OTP !!!..','',{duration:6000});
+          
           console.log(error);
       }
     );   
@@ -105,12 +112,30 @@ export class ResetComponent implements OnInit {
 
 
   public changePassword(){
+    this.newAndConfirmPassword.email=this.emailandOTP.email;
+    this.newAndConfirmPassword.newPassword=this.resetForm.get('newpassword')?.value;
+    this.newAndConfirmPassword.confirmPassword=this.resetForm.get('confirmPassword')?.value;
 
-    alert("change password is working");
+    this._reset.updateUserPassword(this.newAndConfirmPassword).subscribe(
+       (data)=>{
+
+        this._snack.open('Your Password is Updated.','',{duration:3000});
+
+         //redirect login page
+
+         this._router.navigate(['/login']); 
+
+       },
+       (error)=>{
+
+        this._snack.open('Please enter valid password','',{duration:3000});
+         console.log(error);
+
+       }
+    );
     //rest of code to change the password
 
   }
-
 
   togglePasswordVisibility() {
     this.passwordFieldType = (this.passwordFieldType === 'password') ? 'text' : 'password';
