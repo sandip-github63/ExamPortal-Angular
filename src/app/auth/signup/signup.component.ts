@@ -26,7 +26,6 @@ export class SignupComponent implements OnInit {
   // Create a FormGroup to hold all form controls
   signupForm: FormGroup|any;
 
-
   constructor(private userService:UserService, private formBuilder: FormBuilder) { }
 
   
