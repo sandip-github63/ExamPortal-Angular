@@ -33,5 +33,8 @@ export class SidebarComponent implements OnInit {
      
   }
 
+// Add this property to your component
+
+
 
 }

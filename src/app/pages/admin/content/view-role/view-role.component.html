@@ -1,44 +1,36 @@
 <div class="bootstrap-wrapper">
-    <!-- Bootstrap container for the layout -->
-    <mat-card>
-      <!-- Angular Material card -->
-      <mat-card-content>
-        <!-- Content inside the card -->
-        <div class="container">
-          <!-- Bootstrap container class -->
-          <div class="row">
-            <!-- Bootstrap row class -->
-            <div class="col" style="margin: 100px;">
-              <!-- Bootstrap column class with margin -->
-              <mat-card>
-                <!-- Nested Angular Material card -->
-                <mat-card-header>
-                  <!-- Card header with a title -->
-                  <h1 style="text-transform: uppercase;">Role of : {{firstName}}</h1>
-                  
-                </mat-card-header>
-  
-               
-                <!-- Angular Material divider line -->
-  
-                <mat-card-content>
-                  <!-- Content inside the nested card -->
-                  <h2>Current Role : <span>{{currentRole}}</span></h2>
-                  <h3>Change Role
-                    <span>
+  <mat-card class="custom-card">
+    <mat-card-content>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+            <mat-card class="nested-card">
+              <mat-card-header>
+                <h1 class="header-title" >Role of : {{firstName}}</h1>
+              </mat-card-header>
+
+              <mat-card-content class="card-content">
+                <div class="role-info">
+                  <div class="info-item">
+                    <span class="info-label">Current Role:</span>
+                    <span class="info-value">{{currentRole}}</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Change Role:</span>
+                    <span class="info-value">
                       <mat-slide-toggle [(ngModel)]="changeRoleValue">{{changeRoleText}}</mat-slide-toggle>
                     </span>
-                  </h3>
-                </mat-card-content>
+                  </div>
+                </div>
+              </mat-card-content>
 
-                 <mat-card-actions>
-                      <button class="danger" (click)="updateRole()">Change</button>
-                 </mat-card-actions>
-
-              </mat-card>
-            </div>
+              <mat-card-actions>
+                <button class="btn btn-danger" (click)="updateRole()">Change Role</button>
+              </mat-card-actions>
+            </mat-card>
           </div>
         </div>
-      </mat-card-content>
-    </mat-card>
-  </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

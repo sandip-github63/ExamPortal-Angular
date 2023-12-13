@@ -108,6 +108,7 @@ export class ResetComponent implements OnInit {
 
   public showEmail(){
      this.isShowEmail=true;
+     console.log(this.resetForm.value);
   }
 
 

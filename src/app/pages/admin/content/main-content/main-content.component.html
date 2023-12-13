@@ -1,66 +1,38 @@
-<mat-card>
-    <h3>Your Profile Details</h3>
+<mat-card class="custom-card">
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="text-center">
+          <img class="profile-image" src="https://tkmim.ac.in/wp-content/plugins/zsenda-faculty-registration//images/default.jpg" alt="">
+          <h3>{{userName}}</h3>
+        </div>
+      </div>
 
-    <mat-card-content>
-         <div class="bootstrap-wrapper">
-             <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table">
+            <!-- Column 1: -->
+            <ng-container matColumnDef="column1">
+              <mat-header-cell *matHeaderCellDef>
+                <h3>User Info.</h3>
+              </mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.column1 }}</mat-cell>
+            </ng-container>
 
-                <div class="container">
-                    <div class="text-center">
-                      <img class="profile-image" src="https://tkmim.ac.in/wp-content/plugins/zsenda-faculty-registration//images/default.jpg" alt="">
-                      <h3>{{userName}}</h3>
-                    </div>
+            <!-- Column 2: -->
+            <ng-container matColumnDef="column2">
+              <mat-header-cell *matHeaderCellDef>
+                <h3>User Data .</h3>
+              </mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.column2 }}</mat-cell>
+            </ng-container>
 
-                    
-                </div>
-                  
-
-               <div class="row">
-
-                   <div class="col-md-10 offset-md-1">
-                       
-                    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-                        <!-- Column 1: -->
-                        <ng-container matColumnDef="column1">
-                          <mat-header-cell *matHeaderCellDef> <h3 style="font-weight: bold; color: black;">User Info.</h3></mat-header-cell>
-                          <mat-cell *matCellDef="let element"> {{ element.column1 }} </mat-cell>
-                        </ng-container>
-                      
-                        <!-- Column 2: -->
-                        <ng-container matColumnDef="column2">
-                          <mat-header-cell *matHeaderCellDef><h3 style="font-weight: bold; color: black; ">User Data .</h3></mat-header-cell>
-                          <mat-cell *matCellDef="let element"> {{ element.column2 }} </mat-cell>
-                        </ng-container>
-                      
-                      
-                        <!-- Data Rows: -->
-                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-                      </mat-table>
-                      
-                      
-
-                   </div>
-               </div>
-             </div>
-
-         </div>
-
-
-    </mat-card-content>
-
-
-    <mat-card-actions class="text-center">
-      <button mat-icon-button (click)="onDeleteClick()" style="margin-right: 10px;">
-        <mat-icon color="warn" style="font-size: 30px;">delete</mat-icon>
-      </button>
-      <button mat-icon-button (click)="onUpdateClick()">
-        <mat-icon color="primary" style="font-size: 30px;">edit</mat-icon>
-      </button>
-    </mat-card-actions>
-    
-    
-    
-    
-
+            <!-- Data Rows: -->
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
 </mat-card>

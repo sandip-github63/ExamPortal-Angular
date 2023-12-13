@@ -29,5 +29,9 @@ export class CategoriesService {
 
   }
 
+  public getCategory(cId:any){
+    return  this.http.get(`${endPoint}/category/${cId}`);
+  }
+
 
 }

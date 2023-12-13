@@ -53,6 +53,18 @@ export class QuestionService {
     return this.http.post(`${endPoint}/question/get-answer`,questions);
      
   }
-  
+
+
+  public getQuestion(quesId:any){
+
+    return this.http.get(`${endPoint}/question/${quesId}`);
+
+  }  
+
+
+  public updateQuestion(question:any){
+    return this.http.put(`${endPoint}/question/`,question);
+
+  }
 
 }

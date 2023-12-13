@@ -4,13 +4,89 @@
   .text-center {
     text-align: center;
   }
-  
+  /* Add these styles to your existing stylesheet or create a new one */
 
-  .profile-image{
-     max-width:  150px;
-     max-height: 150px;
-     border: 2px solid black;
-     border-radius: 50%;
+.custom-card {
+  margin: 20px;
+  padding: 20px;
+  box-shadow: gray;
+  border-radius: 8px;
+  background-color: gray; /* Light red background */
+  color: #ffffff; /* White text color */
+}
 
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
 
+.custom-table {
+  width: 100%;
+  border-collapse: collapse; /* Remove cell spacing */
+  margin-top: 20px;
+}
+
+.mat-header-cell,
+.mat-cell {
+  padding: 12px; /* Adjust padding for cells */
+  text-align: left; /* Align cell text to the left */
+  border: 1px solid #ddd; /* Add border to cells */
+}
+
+.mat-header-cell {
+  background-color:gray; /* Dark background for header cells */
+  color: #fff; /* White text color for header cells */
+}
+
+.mat-row {
+  transition: background-color 0.3s; /* Smooth transition for row background color change */
+}
+
+.mat-row:hover {
+  background-color: #f2f2f2; /* Light gray background on hover */
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #f9f9f9; /* Alternate row background color */
+}
+
+.mat-row:nth-child(even) {
+  background-color: #ffffff; /* Alternate row background color */
+}
+
+.mat-row, .mat-header-row {
+  display: flex; /* Enable flexbox for better responsiveness */
+}
+
+.mat-cell {
+  flex: 1; /* Allow cells to grow proportionally within a row */
+}
+
+.mat-header-cell:first-child,
+.mat-cell:first-child {
+  border-left: none; /* Remove left border for the first cell */
+}
+
+.mat-header-cell:last-child,
+.mat-cell:last-child {
+  border-right: none; /* Remove right border for the last cell */
+}
+
+/* Optional: Add responsive styles for different screen sizes */
+@media (max-width: 768px) {
+  .custom-card {
+    margin: 10px;
+    padding: 10px;
   }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .custom-table {
+    font-size: 14px;
+  }
+}

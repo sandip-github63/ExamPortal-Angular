@@ -69,55 +69,33 @@ export class ViewQuizQuestionsComponent implements OnInit {
    public deleteQuestionById(quesId:any){    
      
     Swal.fire({
-      title: 'Are you sure you want to delete?',
-      showDenyButton: true,
-      showCancelButton: true,
+      title: 'Are you sure to delete?',
       confirmButtonText: 'Yes',
-      denyButtonText: 'No',
+      showCancelButton: true,
       customClass: {
         actions: 'my-actions',
-        cancelButton: 'order-1 right-gap',
-        confirmButton: 'order-2',
+        confirmButton: 'order-1 right-gap', // Changed order to 1
+        cancelButton: 'order-2',             // Changed order to 2
         denyButton: 'order-3',
       }
     }).then((result) => {
       if (result.isConfirmed) {
-
         this._question.deleteSingleQuestion(quesId).subscribe(
-          
-           (data:any)=>{
-
-              this._snack.open('Question is Deleted ','',{duration:3000})
-
-              this.questions=this.questions.filter((q:any)=>q.quesId!=quesId);
-              
-
-           },
-           (error:any)=>{
-
-             console.log("error during deletion !! :"+error);
-              
-           }          
-
-        );  
-        
-        
-      } else if (result.isDenied) {
-        // User clicked "No" (deny)
-        Swal.fire('Cancelled', 'Your item is safe.', 'info');
-      }
+          (data:any) => {
+            this._snack.open('Question is Deleted ','',{duration:3000})
+            this.questions = this.questions.filter((q:any) => q.quesId != quesId);
+          },
+          (error:any) => {
+            console.log("error during deletion !! :" + error);
+          }          
+        );
+      } 
     });
-
     
 
 
 
   }
-
-  public updateQuestionByQid(quesId:any){
-
-  }
-
 
   // Add a function to handle page change
   onPageChange(event:any) {

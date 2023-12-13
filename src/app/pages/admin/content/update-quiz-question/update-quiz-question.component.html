@@ -1,0 +1,86 @@
+<div class="bootstrap-wrapper">
+    <div class="row mt-5">
+        <div class="col">
+            <h1>Update Question.</h1>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-subtitle>
+                    </mat-card-subtitle>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <form (submit)="onSubmit()">
+
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Enter Question.</mat-label>
+                            <textarea required [(ngModel)]="question.content" name="content" rows="5" matInput
+                                placeholder="Type the Question here..."></textarea>
+                        </mat-form-field>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!--Option 1 field here-->
+                                <mat-form-field class="example-half-width">
+                                    <mat-label>Option 1</mat-label>
+                                    <input required [(ngModel)]="question.option1" name="option1" matInput
+                                        placeholder="Option1">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <!--Option 2 field here-->
+                                <mat-form-field class="example-half-width">
+                                    <mat-label>Option 2</mat-label>
+                                    <input required [(ngModel)]="question.option2" name="option2" matInput
+                                        placeholder="Option2">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!--Option 3 field here-->
+                                <mat-form-field class="example-half-width">
+                                    <mat-label>Option 3</mat-label>
+                                    <input required [(ngModel)]="question.option3" name="option3" matInput
+                                        placeholder="Option3">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <!--Option 4 field here-->
+                                <mat-form-field class="example-half-width">
+                                    <mat-label>Option 4</mat-label>
+                                    <input required [(ngModel)]="question.option4" name="option4" matInput
+                                        placeholder="Option4">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <!--Answer Field Design-->
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Select Correct Answer</mat-label>
+                            <mat-select [(ngModel)]="question.answer" name="answer">
+                                <mat-option *ngIf="question.option1" [value]="question.option1">{{question.option1}}
+                                </mat-option>
+                                <mat-option *ngIf="question.option2" [value]="question.option2">{{question.option2}}
+                                </mat-option>
+                                <mat-option *ngIf="question.option3" [value]="question.option3">{{question.option3}}
+                                </mat-option>
+                                <mat-option *ngIf="question.option4" [value]="question.option4">{{question.option4}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <div class="row">
+                            <div class="col offset-10">
+                                <button type="submit" class="btn btn-primary">
+                                    <span style="vertical-align: middle;">Update</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

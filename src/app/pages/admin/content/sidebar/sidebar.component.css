@@ -1,10 +1,58 @@
 
-button.active {
-    color: #fff; /* Text color when active */
-    background-color: #a83232; /* Background color when active */
-    border-radius: 4px; /* Optional: Add some border-radius for a nicer look */
-  }
+/* Add this CSS to your styles.css or component-specific style file */
 
+.mat-action-list {
+  background-color: #2c5047be; /* Set a background color */
+}
+
+.mat-list-item {
+  color: #ecf0f1; /* Set text color */
+}
+
+.mat-subheader {
+  background-color: #3f234073; /* Set subheader background color */
+  color: #ecf0f1; /* Set subheader text color */
+}
+
+.active {
+  background-color: #3498db; /* Set background color for active items */
+  color: #ecf0f1; /* Set text color for active items */
+}
+
+/* You can customize the colors further based on your design preferences */
+
+/* Example: Hover effect for list items */
+.mat-list-item:hover {
+  background-color: #34495e; /* Set background color on hover */
+}
+
+/* Example: Icon color */
+.mat-icon {
+  color: #ecf0f1; /* Set icon color */
+}
+
+/* Example: Add some padding to list items */
+.mat-list-item {
+  padding: 10px;
+}
+
+/* Example: Style the subheader */
+.mat-subheader {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Example: Style the nested list */
 .no-bullets {
-    list-style: none;
- }
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Example: Style the nested list items */
+.no-bullets li {
+  padding: 5px;
+}
+
+/* Add more styles as needed */
+

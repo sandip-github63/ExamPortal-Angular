@@ -56,7 +56,6 @@ export class ViewCategoriesComponent implements OnInit {
     Swal.fire({
       title: 'Are you sure want to delete ?',
       showDenyButton: true,
-      showCancelButton: true,
       confirmButtonText: 'Yes',
       denyButtonText: 'No',
       customClass: {
@@ -80,9 +79,7 @@ export class ViewCategoriesComponent implements OnInit {
            }
         );
        
-      } else if (result.isDenied) {
-        Swal.fire('Your Category is saved..', '', 'info')
-      }
+      } 
     })   
   }
 

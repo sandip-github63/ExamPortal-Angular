@@ -37,7 +37,7 @@
            
           <button mat-raised-button color="primary" type="submit" (click)="onSubmitEmail()" *ngIf="isShowEmail">Send for OTP</button>
           <button mat-raised-button color="primary" type="submit" (click)="onSubmitOTP()" *ngIf="!isShowEmail && !isShowPassword" >validate OTP</button>
-          <button mat-raised-button color="primary" type="submit" (click)="showEmail()" *ngIf="!isShowEmail && !isShowPassword" class="back">Back</button>
+          <!-- <button mat-raised-button color="primary" type="submit" (click)="showEmail()" *ngIf="!isShowEmail && !isShowPassword" class="back" [routerLink]="'/reset'">Back</button> -->
           <button mat-raised-button color="primary" type="submit" (click)="changePassword()" *ngIf="isShowPassword" class="back">change</button>
         </form>
       </div>

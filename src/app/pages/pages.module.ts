@@ -48,8 +48,8 @@ import { ViewAllUsersComponent } from './admin/content/view-all-users/view-all-u
 import { ViewRoleComponent } from './admin/content/view-role/view-role.component';
 import { WelcomeChildComponent } from './admin/content/welcome-child/welcome-child.component';
 import { ViewResultDetailsComponent } from './user/content/view-result-details/view-result-details.component';
-
-
+import { UpdateQuizQuestionComponent } from './admin/content/update-quiz-question/update-quiz-question.component';
+import { UpdateCategoryComponent } from './admin/content/update-category/update-category.component';
 
 
 
@@ -80,7 +80,9 @@ import { ViewResultDetailsComponent } from './user/content/view-result-details/v
         ViewAllUsersComponent,
         ViewRoleComponent,
         WelcomeChildComponent,
-        ViewResultDetailsComponent     
+        ViewResultDetailsComponent,
+        UpdateQuizQuestionComponent,
+        UpdateCategoryComponent,
         
     
    

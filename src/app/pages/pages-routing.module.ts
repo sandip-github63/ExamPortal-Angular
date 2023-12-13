@@ -23,6 +23,8 @@ import { ViewAllUsersComponent } from './admin/content/view-all-users/view-all-u
 import { ViewRoleComponent } from './admin/content/view-role/view-role.component';
 import { WelcomeChildComponent } from './admin/content/welcome-child/welcome-child.component';
 import { ViewResultDetailsComponent } from './user/content/view-result-details/view-result-details.component';
+import { UpdateQuizQuestionComponent } from './admin/content/update-quiz-question/update-quiz-question.component';
+import { UpdateCategoryComponent } from './admin/content/update-category/update-category.component';
 
 
 const routes: Routes = [
@@ -31,6 +33,7 @@ const routes: Routes = [
     path:'',
     component:HomeComponent
   },
+
   {
     path:'admin-dashboard',
     component:DashboardComponent,
@@ -94,8 +97,17 @@ const routes: Routes = [
         {
           path:"welcome-child",
           component:WelcomeChildComponent
+        },
+
+        {
+          path:"update-quiz-question/:quesId",
+          component:UpdateQuizQuestionComponent
+        },
+        {
+          path:"update-category/:cId",
+          component:UpdateCategoryComponent
         }
-       
+
 
     ]
     
@@ -132,7 +144,7 @@ const routes: Routes = [
     component:StartQuizComponent,
     canActivate:[UserGuard]
   },
-  
+
 
 ];
 

@@ -36,7 +36,6 @@
             <button class="btn btn-secondary">View Question only {{q.numberOfQuestions}}</button>
             <button class="btn btn-danger" [routerLink]="'/admin-dashboard/quiz-update/' + q.quizId">Update</button>
             <button class="btn btn-danger" (click)="deleteQuizById(q.quizId)">Delete</button>
-            <button class="btn btn-primary">Attempt</button>
           </mat-card-actions>
         </mat-card>
   

@@ -18,7 +18,7 @@
   background-color: #dc3545;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 15px; /* Adjust button padding */
   border-radius: 5px;
   cursor: pointer;
 }
@@ -71,9 +71,20 @@
 
 /* Make the card width full */
 .full-width-subtitle {
-  width: 1000px;
-}
+  width: 100%;
 
+  @media (min-width: 768px) {
+    max-width: 600px; /* Adjust max-width for tablets */
+  }
+
+  @media (min-width: 992px) {
+    max-width: 800px; /* Adjust max-width for small desktops */
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1000px; /* Adjust max-width for large desktops */
+  }
+}
 
 /* Style the "Delete" and "Update" buttons */
 .action-button-container {

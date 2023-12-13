@@ -1,0 +1,21 @@
+/* styles.css */
+
+body, html {
+    height: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.bootstrap-wrapper {
+    height: 100%;
+ /**  background-image: url('../../../../assets/sidebarImaged.jpg'); /* Replace with your image URL */
+  /** background-color: #ffffff13; */
+   background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container-fluid {
+    height: 100%;
+}

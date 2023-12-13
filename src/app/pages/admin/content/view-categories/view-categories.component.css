@@ -1,69 +1,51 @@
-/* your-component.css */
-.mat-card {
-  background-color: #f0f0f0; /* Set the background color */
-  border: 1px solid #ddd; /* Add a border */
-  border-radius: 8px; /* Rounded corners */
+/* Add this CSS to your styles.css or styles.scss file */
 
-  /* Add padding and margin for spacing */
-  padding: 10px;
-  margin: 10px;
+.card-container {
+  margin: 20px;
 }
 
-.mat-card-header h2 {
-  font-size: 24px; /* Increase header font size */
-  color: #333; /* Change header text color */
+h1 {
+  font-size: 24px;
+  margin-bottom: 2px;
+  color: #333;
 }
 
-.mat-card-content {
-  font-size: 18px; /* Increase content font size */
-  color: #555; /* Change content text color */
-  padding: 10px 0; /* Add padding for spacing */
+.card-fixed-size {
+  width: 100%;
 }
 
-.mat-card-actions button {
-  padding: 8px 16px; /* Add padding to buttons */
-  margin-right: 8px; /* Add margin between buttons */
-  border: none; /* Remove button border */
-  border-radius: 4px; /* Rounded button corners */
+.card-fixed-size mat-card-actions {
+  display: flex;
+  
+}
+
+.card-fixed-size button {
+  padding: 8px 16px;
+  margin: 8px;
   cursor: pointer;
 }
 
-.mat-card-actions button.danger {
-  background-color: #ff5733; /* Set the delete button color */
-  color: white; /* Change text color */
+.danger {
+  background-color: #ff5252;
+  color: #fff;
+  border: none;
 }
 
-.mat-card-actions button.secondary {
-  background-color: #338fff; /* Set the update button color */
-  color: white; /* Change text color */
+.secondary {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  margin-left: 0px;
 }
 
-/* Hover effect for buttons */
-.mat-card-actions button:hover {
-  opacity: 0.8; /* Reduce opacity on hover */
+.mat-paginator {
+  margin-top: 20px;
+  justify-content: center;
 }
 
-
-/* your-component.css */
-.card-fixed-size {
-  /* Set a fixed width for cards with the card-fixed-size class */
-   /* Set a fixed height for cards with the card-fixed-size class */
-  overflow: hidden; /* Hide content that overflows */
-
-  /* The rest of your styling remains the same as mentioned in the previous answers */
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 10px;
+/* Optional: Add hover effects to buttons */
+.card-fixed-size button:hover {
+  opacity: 0.8;
+  transition: 0.3s;
 }
-
-.card-fixed-size .mat-card-content {
-  overflow: hidden; /* Hide content that overflows */
-  text-overflow: ellipsis; /* Show ellipsis (...) for overflowed text */
-  white-space: nowrap; /* Prevent text from wrapping */
-}
-
-
-
 
